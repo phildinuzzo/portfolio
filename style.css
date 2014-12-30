@@ -1,9 +1,9 @@
 body {
-  background-image: url("assets/subtle_white_feathers.png");
+  background: url("assets/subtle_white_feathers.png");
 }
 
 p {
-  font-family: 'Maven Pro', arial;
+  font-family: arial;
   font-size: 18px;
   text-align:justify;
 /*  font-weight: bold;*/
@@ -171,6 +171,7 @@ h3 {
 
 #contact-container {
   display: none;
+
 }
 
 /*    ~~~~~~~~~~~~MODALS~~~~~~~~~~~   */
@@ -251,4 +252,24 @@ h3 {
   height: auto;
 }
 
+#statement {
+  font-weight: bold;
+}
 
+#skills {
+  font-weight: bold;
+  font-family: arial;
+  font-size: 18px;
+}
+
+.resumelink {
+  text-decoration: none;
+  color: #E34242;
+  font-weight: bolder;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+b {
+  color: #E34242;
+}

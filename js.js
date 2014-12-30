@@ -21,25 +21,34 @@ $(document).ready(function(){
 
 
   $("#port").on('click', function() {
+    if ($(this).hasClass('active')) {
+    } else {
       $(".content-container").slideUp(1000);
       $("#port-container").delay(1000).slideDown(1000, function() {
-        $.scrollTo('.content-container', 800);
+        $.scrollTo('#navbar', 800);
       });
+    }
       // $("#content").delay(500).fadeIn(1000);  //May use later for fadeIn
   });
 
   $("#exp").on('click', function() {
+    if ($(this).hasClass('active')) {
+    } else {
     $(".content-container").slideUp(1000);
     $("#exp-container").delay(1000).slideDown(1000, function() {
-        // $.scrollTo('.maindiv', 1000);
+        $.scrollTo('#navbar', 800);
       });
+    }
   });
 
   $("#contact").on('click', function() {
+    if ($(this).hasClass('active')) {
+    } else {
     $(".content-container").slideUp(1000);
     $("#contact-container").delay(1000).slideDown(1000, function() {
         // $.scrollTo('.maindiv', 1000);
       });
+    }
   });
 
   $('.navbutton').click(function() {
