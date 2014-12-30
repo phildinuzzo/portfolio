@@ -1,139 +1,161 @@
 <!doctype html>
 <html>
-<head>
-  <link rel="icon" type="image/jpeg" href="assets/pdicon.jpg" />
-  <meta charset="utf-8">
-  <meta name="description" content="Phil DiNuzzo - SF based web developer">
+	<head>
+	  <link rel="icon" type="image/jpeg" href="assets/pdicon.jpg" />
 
-  <title>Phil DiNuzzo</title>
+	  <meta charset="utf-8">
+	  <meta name="description" content="Phil DiNuzzo - SF based front end web developer">
 
-<!--   <link rel="stylesheet" href="normalize.css"> -->
-  <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+	  <title>Phil DiNuzzo</title>
 
-  <link rel="stylesheet" type="text/css" href="http://www.dreamtemplate.com/dreamcodes/social_icons/tsc_social_icons.css" />
+	  <link rel="stylesheet" href="lib/normalize.css">
+	  <link rel="stylesheet" href="lib/bootstrap.min.css">
+	  <link rel="stylesheet" href="style.css">
 
-  <script src="jquery-1.9.1.min.js"></script>
-  <script src="jquery-migrate-1.2.1.js"></script>
-  <script src="jquery.color.min.js"></script>
-  <script src="jqModal.js"></script>
-  <script src="jquery.scrollTo.min.js"></script>
-  <script src="js.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500' rel='stylesheet' type='text/css'>
+	  <link rel="stylesheet" type="text/css" href="http://www.dreamtemplate.com/dreamcodes/social_icons/tsc_social_icons.css" />
 
-</head>
-<body>
-<header></header>
+	  <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+<!-- 	  <script type="text/javascript" src="lib/jquery.color.min.js"></script> -->
+	  <script type="text/javascript" src="lib/jqModal.js"></script>
+	  <script type="text/javascript" src="lib/jquery.scrollTo.min.js"></script>
+	  <script type="text/javascript" src="js.js"></script>
 
-<div class="mainDiv">
+	  <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500' rel='stylesheet' type='text/css'>
+	</head>
 
-      <span id="name" class="mainFade">PHIL DINUZZO</span><br>
-      <span id="toptext1" class="mainFade1 toptext">
-        Ruby on Rails
-      </span>
-      <span id="toptext2" class="mainFade2 toptext">
-        Front-end design
-      </span>
-      <span id="toptext3" class="mainFade3 toptext">
+	<body>
+
+	<div class="container">
+
+	<!-- HEADER -->
+		<div class="header">
+      <span id="name">PHIL DINUZZO</span>
+
+      <p class="toptext">
+        Front end developer
+      </p>
+      <p class="toptext">
         Based in San Francisco
-      </span>
+      </p>
 
-    <div id="logoDiv" class="mainFade">
-      <img id="logo1" src="assets/logo1.png">
-    </div>
+	    <div id="logo">
+	      <img src="assets/logo1.png">
+	    </div>
 
-    <div id="navbar" class="mainFade">
-      <div id="port" class="navbutton">PORTFOLIO</div>
-      <div id="exp" class="navbutton">EXPERIENCE</div>
-      <div id="contact" class="navbutton">CONTACT</div>
-    </div>
-
-    <div id="port-container" class="content-container">
-      <div id="content" class="row-fluid more-space">
-        <h3>Check out my recent projects:</h3>
-<!--         <div class="span1"></div> -->
-        <div class="span3">
-          <h2>GoodFood</h2>
-          <p>Resturant finder app optimized for mobile that reccomends only highly rated resturants that are open now and near you.
-          </p>
-          <img class="portPhotos modalTrigger" src="assets/goodfoodphone.png">
-<!--           <div id="portGoodfood" class="modalTrigger">GoodFood</div> -->
-        </div>
-
-        <div class="span3">
-          <h2>The List</h2>
-          <p>A Rails-based web app presenting the legendary List of Bay Area concerts, derived from the weekly text-only list.
-          </p>
-          <p><a class="resumelink" href="http://thelistsf.heroku.com">Visit The List</a></p>
-<!--           <img class="portPhotos modalTrigger" src="assets/thelist.png"> -->
-        </div>
-
-<!--         <div class="span3">
-          <h2>Wise Elephant</h2>
-          <p>Simple website for a SoCal-based ESL tutoring service.
-          </p>
-        </div> -->
-
-      </div>
-    </div>
-
-    <div id="exp-container" class="content-container">
-      <div class="content">
-        <p id="statement">I pride myself on my ability to learn quickly, teach others and work effectively with diverse personalities.</p>
-        <p> I’ve honed project management skills over a 6-year career in affordable housing and people skills from several years in food service management. Building on my self-taught web design skills, I now aim to use my newly-refreshed web development experience to launch a career of building, problem-solving and continuous learning.</p>
-        <p>My core skills include:
-        <ul id="skills">
-          <li>Ruby on Rails</li>
-          <li>Javascript</li>
-          <li>HTML and CSS</li>
-        </ul>
-        <p>In addition to <b>Rails</b>, I've worked with <b>Sinatra</b> and have deployed both frameworks to <b>Heroku</b>. I also have experience with <b>HAML</b>, <b>Coffeescript</b> and <b>SCSS</b>. I have worked with many <b>GEMS</b> including <b>Omniauth, Devise, Geocoder</b> and <b>Nokogiri</b>.
-        <p>
-        <p>My Javascript skills include <b>JQuery</b> and associated libraries, including some work with <b>JQuery Mobile</b>. I have implemented <b>AJAX</b> in multiple projects and have strong familiarity with <b>JSON</b>.
-        </p>
-        <p>I have worked with many <b>APIs</b> including <b>Yelp, Facebook, Twitter, WeatherUnderground</b> and various <b>Google</b> APIs.
-        </p>
-        <p>I have frequently implemented <b>Test Driven Development</b>, primarily utilizing <b>RSPEC</b> and <b>SimpleCov</b>. I have used the <b>Benchmark</b> GEM for speed analysis. All of my version control is done with <b>Git</b>.
-        </p>
-        <p>In addition to my programming skills, I have familiarty with <b>Adobe</b> graphic design products, I'm proficient with both <b>PC and Mac</b>, and, most importantly, I have a relentless desire to <b>learn</b>!
-
-        <p><b><a class="resumelink" href="resume.pdf">View my pre-programming resume (PDF)</a></b><p>
-
-<!--          Building on my background in web design, I recently completed a 3 month immersive course in web development focusing on Ruby on Rails. I learned and implemented many of the latest web technolgies including. -->
-         </p>
-      </div>
-    </div>
-
-    <div id="contact-container" class="content-container">
-      <div class="content row-fluid">
-        <div class="span4">
-          <img class="portPhotos" src="assets/me2.jpg">
-        </div>
-        <div class-"span7 offset1">
-         <a class="linkedin_square32 tsc_social_square32" title="linkedin" href="http://www.linkedin.com/in/phildinuzzo">linkedin</a>
-         <a class="github_square32 tsc_social_square32" title="github" href="https://github.com/phildinuzzo"></a>
-         <a class="quora_square32 tsc_social_square32" title="quora" href="http://www.quora.com/Phil-DiNuzzo">quora</a>
-         <a class="twitter2_square32 tsc_social_square32" title="twitter" href="https://twitter.com/PhilDiNuzzo"></a>
-         <a class="googleplus2_square32 tsc_social_square32" title="google+" href="https://plus.google.com/105013817240014471614/posts">google+</a>
-        </div>
-        <span><p><a id="email" href="mailto:phil@phildinuzzo.com.com?Subject=Hi%20Phil">phil@phildinuzzo.com</a></p></span>
-        <span><p>415 317.5282</p></span>
-      </div>
-    </div>
-
-</div>
+	    <div id="navbar">
+	      <div id="port" class="navbutton">PORTFOLIO</div>
+	      <div id="exp" class="navbutton">EXPERIENCE</div>
+	      <div id="contact" class="navbutton">CONTACT</div>
+	    </div>
+	  </div>
 
 
-<!-- MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<div class="modal goodfoodModal">
-  <span class="close">&times;</span>
-  <img class="modalImg" src="assets/goodfoodscreen.png">
-  <span class="bottomModal"><span class="bottomLink"><a id="link" href="http://goodfoodwdi.herokuapp.com">VISIT THE SITE</a>
-  </span></span>
-</div>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<footer></footer>
-</body>
+
+
+	<!-- PORTFOLIO -->
+	    <div id="port-container" class="content-container">
+
+	      <div id="content" class="row-fluid more-space">
+<!-- 	        <h3>Check out my recent projects:</h3> -->
+	<!--         <div class="span1"></div> -->
+	        <div class="span3">
+	          <h2>SweatGuru</h2>
+	          <p>SF-based startup for fitness professionals and enthusiasts. Built on Django and Backbone.js.
+	          </p>
+	        </div>
+
+	        <div class="span3">
+	          <h2>GoodFood</h2>
+	          <p>Resturant finder app optimized for mobile that reccomends only highly rated resturants that are open now and near you.
+	          </p>
+	          <img class="portPhotos modalTrigger" src="assets/goodfoodphone.png">
+	<!--           <div id="portGoodfood" class="modalTrigger">GoodFood</div> -->
+	        </div>
+
+	        <div class="span3">
+	          <h2>The List</h2>
+	          <p>A Rails-based web app presenting the legendary List of Bay Area concerts, derived from the weekly text-only list.
+	          </p>
+	          <p><a class="resumelink" href="http://thelistsf.heroku.com">Visit The List</a></p>
+	<!--           <img class="portPhotos modalTrigger" src="assets/thelist.png"> -->
+	        </div>
+
+	      </div>
+
+	    </div>
+
+
+
+
+	<!-- EXPERIENCE -->
+	    <div id="exp-container" class="content-container">
+
+	      <div class="content">
+<!-- 	        <p id="statement">I pride myself on my ability to learn quickly, teach others and work effectively with diverse personalities.</p>
+	        <p> I’ve honed project management skills over a 6-year career in affordable housing and people skills from several years in food service management. Building on my self-taught web design skills, I now aim to use my newly-refreshed web development experience to launch a career of building, problem-solving and continuous learning.</p>
+	        <p>My core skills include:
+	        <ul id="skills">
+	          <li>Ruby on Rails</li>
+	          <li>Javascript</li>
+	          <li>HTML and CSS</li>
+	        </ul>
+	        <p>In addition to <b>Rails</b>, I've worked with <b>Sinatra</b> and have deployed both frameworks to <b>Heroku</b>. I also have experience with <b>HAML</b>, <b>Coffeescript</b> and <b>SCSS</b>. I have worked with many <b>GEMS</b> including <b>Omniauth, Devise, Geocoder</b> and <b>Nokogiri</b>.
+	        <p>
+	        <p>My Javascript skills include <b>JQuery</b> and associated libraries, including some work with <b>JQuery Mobile</b>. I have implemented <b>AJAX</b> in multiple projects and have strong familiarity with <b>JSON</b>.
+	        </p>
+	        <p>I have worked with many <b>APIs</b> including <b>Yelp, Facebook, Twitter, WeatherUnderground</b> and various <b>Google</b> APIs.
+	        </p>
+	        <p>I have frequently implemented <b>Test Driven Development</b>, primarily utilizing <b>RSPEC</b> and <b>SimpleCov</b>. I have used the <b>Benchmark</b> GEM for speed analysis. All of my version control is done with <b>Git</b>.
+	        </p>
+	        <p>In addition to my programming skills, I have familiarty with <b>Adobe</b> graphic design products, I'm proficient with both <b>PC and Mac</b>, and, most importantly, I have a relentless desire to <b>learn</b>!
+
+	        <p><b><a class="resumelink" href="resume.pdf">View my pre-programming resume (PDF)</a></b><p> -->
+
+	<!--          Building on my background in web design, I recently completed a 3 month immersive course in web development focusing on Ruby on Rails. I learned and implemented many of the latest web technolgies including. -->
+	         </p>
+	      </div>
+
+	    </div>
+
+
+
+
+	<!-- CONTACT -->
+	    <div id="contact-container" class="content-container">
+
+	      <div class="content row-fluid">
+	        <div class="span4">
+	          <img class="portPhotos" src="assets/me.png">
+	        </div>
+	        <div class="span7 offset1">
+	         <a class="linkedin_square32 tsc_social_square32" title="linkedin" href="http://www.linkedin.com/in/phildinuzzo" target="_blank">linkedin</a>
+	         <a class="github_square32 tsc_social_square32" title="github" href="https://github.com/phildinuzzo" target="_blank"></a>
+	         <a class="quora_square32 tsc_social_square32" title="quora" href="http://www.quora.com/Phil-DiNuzzo" target="_blank">quora</a>
+	         <a class="twitter2_square32 tsc_social_square32" title="twitter" href="https://twitter.com/PhilDiNuzzo" target="_blank"></a>
+	         <a class="googleplus2_square32 tsc_social_square32" title="google+" href="https://plus.google.com/+PhilDiNuzzo/about" target="_blank">google+</a>
+	        </div>
+	        <span><p><a href="mailto:phil248@gmail.com.com?Subject=Hi%20Phil">Email me! </a>I'm currently looking for new oppurtunities, particularly with small companies. Shoot me an email or contact me on <a href="https://angel.co/phil-dinuzzo">AngelList</a>.</p>
+	        <p>If you want to chat about <a href="http://thelistsf.herokuapp.com/">The List</a> or my experiences with General Assembly (or anything else), let's get a coffee in downtown SF. </p>
+	        </span>
+	      </div>
+
+	    </div>
+
+
+	</div>
+
+
+
+
+	<!-- MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<div class="modal goodfoodModal">
+	  <span class="close">&times;</span>
+	  <img class="modalImg" src="assets/goodfoodscreen.png">
+<!-- 	  <span class="bottomModal"><span class="bottomLink"><a id="link" href="http://goodfoodwdi.herokuapp.com">VISIT THE SITE</a> -->
+	  </span></span>
+	</div>
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	</body>
 </html>

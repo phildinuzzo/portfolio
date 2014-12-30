@@ -1,59 +1,28 @@
 $(document).ready(function(){
 
-  $(document).ready(doResize);
-  doResize();
-  $(window).on('resize', doResize);
-  function doResize() {
-    $('.mainDiv').css({
-        position:'absolute',
-        left: ($(window).width() - $('.mainDiv').outerWidth())/2
-        // top: ($(window).height() - $('.mainDiv').outerHeight())/2
-    });
-  }
+// Preload large images
+  var preloads = ['assets/me.png', 'assets/goodfoodphone.png', 'assets/goodfoodscreen.png'];
 
-  $(".mainFade").delay(500).fadeIn(1500, 'swing');
-  $(".mainFade1").delay(1000).fadeIn(1000, 'swing').animate({color: '#CACBCF'}, 400);
+	for (i = 0; i < preloads.length; i++) {
+		var image = new Image();
+		image.src = preloads[i];
+	}
 
-  $(".mainFade2").delay(2500).fadeIn(1000, 'swing').animate({color: '#CACBCF'}, 400);
-  $(".mainFade3").delay(4000).fadeIn(1000, 'swing').animate({color: '#CACBCF'}, 400);
+// Fade in the main div
+  $('.header').delay(500).fadeIn(800, 'swing');
 
-  // $('.mainFade1').delay(1).animate({color: '#8A2C4B'}, 1000).animate({color: 'white'}, 500);
-
-
-  $("#port").on('click', function() {
-    if ($(this).hasClass('active')) {
-    } else {
-      $(".content-container").slideUp(1000);
-      $("#port-container").delay(1000).slideDown(1000, function() {
-        $.scrollTo('#navbar', 800);
+// Navbar
+	$('.navbutton').on('click', function(e){
+		if (!$(this).hasClass('active')) {
+			$(this).addClass('active').siblings().removeClass('active');
+			$('.content-container').slideUp(400);
+			var id = $(this).attr('id') + '-container';
+			$('#' + id).delay(500).slideDown(500, function() {
+        // do nothing extra right now
       });
-    }
-      // $("#content").delay(500).fadeIn(1000);  //May use later for fadeIn
-  });
+		}
+	});
 
-  $("#exp").on('click', function() {
-    if ($(this).hasClass('active')) {
-    } else {
-    $(".content-container").slideUp(1000);
-    $("#exp-container").delay(1000).slideDown(1000, function() {
-        $.scrollTo('#navbar', 800);
-      });
-    }
-  });
-
-  $("#contact").on('click', function() {
-    if ($(this).hasClass('active')) {
-    } else {
-    $(".content-container").slideUp(1000);
-    $("#contact-container").delay(1000).slideDown(1000, function() {
-        // $.scrollTo('.maindiv', 1000);
-      });
-    }
-  });
-
-  $('.navbutton').click(function() {
-    $(this).addClass('active').siblings().removeClass('active');
-  });
 
 
 // MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,16 +48,6 @@ $(document).ready(function(){
   });
 
 //  END MODAL ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  var preloads = ['assets/me2.jpg'];
-
-  $(preloads).each(function(){
-      $('<img />')[0].src = this;
-  });
-
-
-
-
 
 
 });
