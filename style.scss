@@ -3,7 +3,50 @@ $red: #C70E1A;
 $blue: #42617c;
 $orange: #E34242;
 
+
+
+// Arrow mixins
+@mixin arrow($width, $height, $top) {
+	top: $top;
+	width: 0;
+	height: 0;
+	border-bottom: $height solid transparent;
+	border-top: $height solid transparent;
+	border-right: $width solid #ffffff;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle;
+	&:before {
+    content:'';
+    width:0;
+    height:0;
+    border-top: $height solid transparent;
+    border-bottom: $height solid transparent;
+    border-right: $width solid $orange;
+    position: absolute;
+    top: -$height;
+    left: -$width;
+	}
+}
+
+.glow {
+    animation: glow .5s alternate;
+    -webkit-animation: glow .5s alternate;
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 0 0 20px red;
+    }
+}
+@-webkit-keyframes glow {
+    to {
+        text-shadow: 0 0 20px red;
+    }
+}
+
 body {
+	background-color: #FBFBFB;
   background: url("assets/crossword.png");
   height: 1200px;
 }
@@ -11,23 +54,19 @@ body {
 p {
   font-family: arial;
   font-size: 18px;
-  text-align:justify;
 }
 
-b {
-  color: $orange;
+a {
+	color: $orange;
+	text-decoration: none;
 }
 
-h2 {
-  font-family: arial;
-  font-size: 24px;
-  text-align: center;
-}
-
-h3 {
-  font-family: 'Maven Pro', arial;
-  font-size: 18px;
-  margin: 0px 0 -7px 0;
+.link {
+  // text-decoration: none;
+  // color: $orange;
+  // font-weight: bolder;
+  // font-size: 22px;
+  // text-decoration: underline;
 }
 
 // Top level container
@@ -37,7 +76,7 @@ h3 {
   height: auto;
   overflow: hidden;
   min-height: 400px;
-  min-width: 750px;
+  // min-width: 750px;
   max-width: 1000px;
   -moz-box-shadow: 0 0 10px 5px #999;
   -webkit-box-shadow: 0 0 10px 5px #999;
@@ -54,7 +93,7 @@ h3 {
 	.main-fade {
 	  display: none;
 	}
-	#name {
+	.name {
 	  float: right;
 	  color: #ffffff;
 	  font-family: 'Maven Pro', arial;
@@ -74,25 +113,26 @@ h3 {
 	  	top: 170px;
 	  }
 	}
-	#logo {
+	.logo {
 	  padding: 10px;
 	  height: 230px;
 	}
-
 }
 
-#navbar {
-  background-color: white;
+.navbar {
+  background-color: #ffffff;
   width: 100%;
   height: 50px;
   margin-bottom: 20px;
   padding-left: 25px;
+  position: relative;
   z-index: 1;
+  overflow: hidden;
 	.navbutton {
 	  display: inline-block;
 	  height: 36px;
 	  width: 150px;
-	  color: black;
+	  color: #000000;
 	  font-family: 'Maven Pro', arial;
 	  font-size: 20px;
 	  font-weight: bold;
@@ -101,154 +141,159 @@ h3 {
 	}
 	.navbutton:hover, .navbutton.active {
 	  cursor: pointer;
-	   -webkit-transition: all 0.2s ease-in; /*Safari & Chrome*/
-	   transition: all 0.2s ease-in;
-	   -moz-transition: all 0.2s ease-in; /* Firefox 4 */
-	   -o-transition: all 0.2s ease-in; /* Opera */
+	  -webkit-transition: all 0.2s ease-in;
+	  transition: all 0.2s ease-in;
+	  -moz-transition: all 0.2s ease-in;
+	  -o-transition: all 0.2s ease-in;
 	  text-decoration: none;
 	  color: $red;
 	}
+	.slider {
+		display: none;
+		position: absolute;
+		height: 50px;
+		background-color: $orange;
+		opacity: 0.5;
+		right: -200px;
+		// @include arrow(50px, 100px, -80px);
+		// @include arrow(70px, 50px, -25px);
+		@include arrow(25px, 50px, -25px);
+	}
+	.slider-1 {
+		// @include arrow(50px, 100px, -80px);
+		// @include arrow(50px, 35px, -10px);
+		@include arrow(15px, 35px, -10px);
+	}
+	.slider-2 {
+		// @include arrow(50px, 100px, -80px);
+		// @include arrow(35px, 25px, 0);
+		@include arrow(10px, 25px, 0);
+	}
 }
 
-.more-space [class*="span"] {
-  margin-left: 30px;
-  margin-right: 30px;
-}
 
-// Sub containers
+
+
+// Tab containers
 .content-container {
+	display: none;
   margin: 5px auto 20px auto;
   padding: 25px;
   width: 80%;
-  background-color: white;
+  min-height: 40px;
+  background-color: #ffffff;
   border-radius: 10px;
 }
 
-/* May use later for FadeIn of content after slidedown*/
-#content {
-  margin: auto auto auto auto;
-  padding-right: 40px;
-}
 
-#port-container {
+
+// Portfolio tab
+#portfolio-container {
   display: none;
+	h2 {
+	  font-family: arial;
+	  font-size: 26px;
+	  text-align: center;
+	  // color: $red;
+	}
+  > div {
+  	padding-bottom: 20px;
+  	> p {
+  		width: 80%;
+  		margin: 0 auto;
+  	}
+  }
+  // GoodFood section ~~~~~
+	.goodfood {
+		p {
+			width: 60%;
+			float: right;
+			margin-top: 80px;
+		}
+		img {
+			width: 35%;
+		}
+	}
+	// The List section ~~~~~
+	.thelist {
+
+	}
+
+	// SweatGuru section ~~~~
+	.sweatguru {
+
+	}
+
 }
 
-.portPhotos {
-  width: 200px;
-  border-radius: 3px;
-}
 
-#portGoodfood {
 
-}
 
+// Experience tab
 #exp-container {
   display: none;
+	b {
+	  color: $orange;
+	}
+	.statement {
+	  font-weight: bold;
+	}
+
+	.skills {
+	  font-weight: bold;
+	  font-family: arial;
+	  font-size: 18px;
+	}
 }
 
+
+// Contact tab
 #contact-container {
   display: none;
   a {
   	color: $orange;
   	text-decoration: none;
   }
-  p {
-  	text-align: left;
-  }
-
-}
-
-/*    ~~~~~~~~~~~~MODALS~~~~~~~~~~~   */
-.close {
-  cursor: pointer;
-  width: 100%;
-  height: 30px;
-  float: right;
-  text-align: right;
-  font-family: arial;
-  font-size: 36px;
-  color: white;
-  padding: 2px 7px 12px 0;
-  background-color: $blue;
-}
-
-.bottomModal {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  font-size: 30px;
-  text-align: center;
-  position: relative;
-  margin-top: -150px; /* negative value of footer height */
-  height: 150px;
-  clear:both;
-  cursor: pointer;
-  width: 100%;
-  font-family: arial;
-  color: white;
-  font-weight: bold;
-  padding: 2px 5px 10px 0;
-  background-color: #42617c;
-  text-decoration: none;
-}
-
-.modalTrigger {
-  cursor: pointer;
-}
-
-.modal {
-  overflow: hidden;
-  border: 8px black solid;
-  border-radius: 10px;
-}
-
-.goodfoodModal {
-  display: none;
-  position: fixed;
-  width: 90%;
-  height:auto;
-  max-height: 900px;
-  min-height: 450px;
-  min-width: 750px;
-  max-width: 900px;
-  top:0;
-  left:50%;
-  margin-top: 25px;
-  margin-bottom: 50px;
-  background-color: white;
-  z-index: 1;
-}
-
-.modalImg {
-  max-width: 100%;
-  height: auto;
-}
-
-#statement {
-  font-weight: bold;
-}
-
-#skills {
-  font-weight: bold;
-  font-family: arial;
-  font-size: 18px;
-}
-
-.resumelink {
-  text-decoration: none;
-  color: $orange;
-  font-weight: bolder;
-  font-size: 22px;
-  text-decoration: underline;
-}
-
-
-
-
-// Small tablet/mobile
-@media screen and (max-width: 800px) {
-	body {
-
+	.headshot {
+	  width: 200px;
+	  border-radius: 5px;
+	  float: left;
+	  margin-top: 15px;
 	}
+  .social {
+  	float: right;
+  }
+  .contact-blurb {
+  	display: inline-block;
+  	width: 58%;
+  	margin-left: 4%;
+  	p {
+  		text-align: left;
+  	}
+  }
+}
+
+
+
+// Media queries
+@media screen and (max-width: 750px) {
+	// .header {
+	// 	.name {
+	// 		text-align: center;
+	// 		padding: 0;
+	// 	}
+	// 	.logo > img {
+	// 		display: none;
+	// 	}
+	// }
+}
+
+@media screen and (max-width: 400px) {
+	.header {
+		display: none;
+	}
+	.m-header {
+		display: block;
+	}
+
 }
