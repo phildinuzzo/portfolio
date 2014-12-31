@@ -3,8 +3,6 @@ $red: #C70E1A;
 $blue: #42617c;
 $orange: #E34242;
 
-
-
 // Arrow mixins
 @mixin arrow($width, $height, $top) {
 	top: $top;
@@ -29,26 +27,42 @@ $orange: #E34242;
 	}
 }
 
+// Navbar glow animation
 .glow {
-    animation: glow .5s alternate;
-    -webkit-animation: glow .5s alternate;
+   animation: glow .7s ease-out infinite alternate;
+   -webkit-animation: glow .7s ease-out infinite alternate;
 }
 
 @keyframes glow {
-    to {
-        text-shadow: 0 0 20px red;
-    }
+  0% { text-shadow: 0 0 22px $red; }
+  50% { text-shadow: 0 0 15px $red; }
+  100% { text-shadow: 0 0 0 $red; }
 }
+
 @-webkit-keyframes glow {
-    to {
-        text-shadow: 0 0 20px red;
-    }
+  0% { text-shadow: 0 0 22px $red; }
+  50% { text-shadow: 0 0 15px $red; }
+  100% { text-shadow: 0 0 0 $red; }
 }
+
+// Old keyframes
+// @keyframes glow {
+//     to {
+//         text-shadow: 0 0 22px $red;
+//     }
+// }
+
+// @-webkit-keyframes unglow {
+//     to {
+//         text-shadow: 0 0 0 $red;
+//     }
+// }
+
 
 body {
 	background-color: #FBFBFB;
   background: url("assets/crossword.png");
-  height: 1200px;
+  min-height: 1000px;
 }
 
 p {
@@ -76,7 +90,6 @@ a {
   height: auto;
   overflow: hidden;
   min-height: 400px;
-  // min-width: 750px;
   max-width: 1000px;
   -moz-box-shadow: 0 0 10px 5px #999;
   -webkit-box-shadow: 0 0 10px 5px #999;

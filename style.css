@@ -1,17 +1,29 @@
 .glow {
-  animation: glow .5s alternate;
-  -webkit-animation: glow .5s alternate; }
+  animation: glow .7s ease-out infinite alternate;
+  -webkit-animation: glow .7s ease-out infinite alternate; }
 
 @keyframes glow {
-  to {
-    text-shadow: 0 0 20px red; } }
+  0% {
+    text-shadow: 0 0 22px #c70e1a; }
+
+  50% {
+    text-shadow: 0 0 15px #c70e1a; }
+
+  100% {
+    text-shadow: 0 0 0 #c70e1a; } }
 @-webkit-keyframes glow {
-  to {
-    text-shadow: 0 0 20px red; } }
+  0% {
+    text-shadow: 0 0 22px #c70e1a; }
+
+  50% {
+    text-shadow: 0 0 15px #c70e1a; }
+
+  100% {
+    text-shadow: 0 0 0 #c70e1a; } }
 body {
   background-color: #FBFBFB;
   background: url("assets/crossword.png");
-  height: 1200px; }
+  min-height: 1000px; }
 
 p {
   font-family: arial;
