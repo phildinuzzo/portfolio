@@ -1,11 +1,14 @@
 $(document).ready(function() {
 
-// Preload large images
-  var preloads = ['assets/me.png', 'assets/goodfoodphone.png', 'assets/goodfoodscreen.png'];
+// Preload large images, background first
+  var preloads = ['assets/bg.png', 'assets/me.png', 'assets/goodfoodphone.png', 'assets/goodfoodscreen.png'];
 
 	for (i = 0; i < preloads.length; i++) {
 		var image = new Image();
 		image.src = preloads[i];
+		if (i === 0) {
+			$('body').css('background-image', 'url(' + image.src + ')');
+		}
 	}
 
 // Some navbar animation
@@ -31,11 +34,10 @@ $(document).ready(function() {
 		if (!$(this).hasClass('active')) {
 			// Navbar
 			$(this).addClass('active').siblings().removeClass('active');
-			// Maybe add more and iterate
 			if (!boolean === true) {
-				navSlider(450, '0');
-				navSlider(550, '1');
-				navSlider(650, '2');
+				for (var i = 0; i < $('.slider').length; i++) {
+					navSlider(450 + (i * 80), i.toString());
+				}
 			}
 
 			// Content
@@ -49,15 +51,27 @@ $(document).ready(function() {
 		}
 	}
 
-	// Fade in the main div and check for hash
-  $('.header').delay(500).fadeIn(800, 'swing', function() {
+	// Fade in the main div, enable navbar click and check for hash
+  $('.header').delay(300).fadeIn(600, 'swing', function() {
+  	$('.navbutton').on('click', navAction);
   	if(window.location.hash) {
   		$(window.location.hash).trigger('click', true);
   	}
   });
 
-  // Change tabs
-	$('.navbutton').on('click', navAction);
+
+  // Image modal
+  // var url = $(e.target).data('url');
+  // if (url) {
+  //     $('.photo-modal-dialog').hide();
+  //     $('#photo-holder > img').remove();
+  //     $('#photo-holder').append('<img src=' + url + '>');
+  //     $('#view-photo').modal({backdrop: 'false'});
+  //     setTimeout(function(){
+  //         $('.photo-modal-dialog').fadeIn(400);
+  //     }, 200);
+  // }
+
 
 
 });

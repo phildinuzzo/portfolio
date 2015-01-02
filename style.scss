@@ -3,65 +3,11 @@ $red: #C70E1A;
 $blue: #42617c;
 $orange: #E34242;
 
-// Arrow mixins
-@mixin arrow($width, $height, $top) {
-	top: $top;
-	width: 0;
-	height: 0;
-	border-bottom: $height solid transparent;
-	border-top: $height solid transparent;
-	border-right: $width solid #ffffff;
-	font-size: 0;
-	line-height: 0;
-	vertical-align: middle;
-	&:before {
-    content:'';
-    width:0;
-    height:0;
-    border-top: $height solid transparent;
-    border-bottom: $height solid transparent;
-    border-right: $width solid $orange;
-    position: absolute;
-    top: -$height;
-    left: -$width;
-	}
-}
-
-// Navbar glow animation
-.glow {
-   animation: glow .7s ease-out infinite alternate;
-   -webkit-animation: glow .7s ease-out infinite alternate;
-}
-
-@keyframes glow {
-  0% { text-shadow: 0 0 22px $red; }
-  50% { text-shadow: 0 0 15px $red; }
-  100% { text-shadow: 0 0 0 $red; }
-}
-
-@-webkit-keyframes glow {
-  0% { text-shadow: 0 0 22px $red; }
-  50% { text-shadow: 0 0 15px $red; }
-  100% { text-shadow: 0 0 0 $red; }
-}
-
-// Old keyframes
-// @keyframes glow {
-//     to {
-//         text-shadow: 0 0 22px $red;
-//     }
-// }
-
-// @-webkit-keyframes unglow {
-//     to {
-//         text-shadow: 0 0 0 $red;
-//     }
-// }
-
 
 body {
 	background-color: #FBFBFB;
-  background: url("assets/crossword.png");
+  // background: url("assets/crossword.png");
+  background-repeat: round;
   min-height: 1000px;
 }
 
@@ -73,6 +19,9 @@ p {
 a {
 	color: $orange;
 	text-decoration: none;
+	&:hover {
+		color: lighten($orange, 15%);
+	}
 }
 
 .link {
@@ -81,6 +30,18 @@ a {
   // font-weight: bolder;
   // font-size: 22px;
   // text-decoration: underline;
+}
+
+//Overlay for image modals
+.overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	margin-top: -20px;
+	opacity: 0.4;
+	background-color: black;
+	position: fixed;
+	z-index: 3;
 }
 
 // Top level container
@@ -129,7 +90,56 @@ a {
 	.logo {
 	  padding: 10px;
 	  height: 230px;
+	  img {
+			@media screen and (max-width: 800px) {
+				width: 30%;
+			}
+		}
 	}
+}
+
+
+// NAVBAR
+// Arrow mixins
+@mixin arrow($width, $height, $top) {
+	top: $top;
+	width: 0;
+	height: 0;
+	border-bottom: $height solid transparent;
+	border-top: $height solid transparent;
+	border-right: $width solid #ffffff;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle;
+	&:before {
+    content:'';
+    width:0;
+    height:0;
+    border-top: $height solid transparent;
+    border-bottom: $height solid transparent;
+    border-right: $width solid $orange;
+    position: absolute;
+    top: -$height;
+    left: -$width;
+	}
+}
+
+// Navbar glow animation
+.glow {
+   animation: glow .7s ease-out infinite alternate;
+   -webkit-animation: glow .7s ease-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 22px $red; }
+  50% { text-shadow: 0 0 15px $red; }
+  100% { text-shadow: 0 0 0 $red; }
+}
+
+@-webkit-keyframes glow {
+  0% { text-shadow: 0 0 22px $red; }
+  50% { text-shadow: 0 0 15px $red; }
+  100% { text-shadow: 0 0 0 $red; }
 }
 
 .navbar {
@@ -166,24 +176,32 @@ a {
 		position: absolute;
 		height: 50px;
 		background-color: $orange;
-		opacity: 0.5;
+		opacity: 0.4;
 		right: -200px;
+		// right: 200px;
 		// @include arrow(50px, 100px, -80px);
 		// @include arrow(70px, 50px, -25px);
 		@include arrow(25px, 50px, -25px);
 	}
 	.slider-1 {
+		// right: 150px;
 		// @include arrow(50px, 100px, -80px);
 		// @include arrow(50px, 35px, -10px);
 		@include arrow(15px, 35px, -10px);
 	}
 	.slider-2 {
+		// right: 100px;
+		// @include arrow(50px, 100px, -80px);
+		// @include arrow(35px, 25px, 0);
+		@include arrow(10px, 25px, 0);
+	}
+	.slider-3 {
+		// right: 100px;
 		// @include arrow(50px, 100px, -80px);
 		// @include arrow(35px, 25px, 0);
 		@include arrow(10px, 25px, 0);
 	}
 }
-
 
 
 
@@ -197,8 +215,6 @@ a {
   background-color: #ffffff;
   border-radius: 10px;
 }
-
-
 
 // Portfolio tab
 #portfolio-container {
@@ -216,25 +232,55 @@ a {
   		margin: 0 auto;
   	}
   }
+  // All portfolio sections ~~~
+  .port-div {
+  	min-height: 250px;
+  	p {
+  		float: right;
+  		width: 50%
+  	}
+  	img {
+  		width: 49%;
+  	}
+
+  }
+
   // GoodFood section ~~~~~
 	.goodfood {
 		p {
-			width: 60%;
-			float: right;
+			// width: 60%;
+			// float: right;
 			margin-top: 80px;
 		}
 		img {
-			width: 35%;
+
 		}
 	}
 	// The List section ~~~~~
 	.thelist {
-
+		min-height: 350px;
+		p {
+			float: left;
+			width: 45%;
+			// margin-top: 30px;
+		}
+		img {
+			float: right;
+		}
 	}
 
 	// SweatGuru section ~~~~
 	.sweatguru {
-
+		p {
+			float: right;
+		}
+		img {
+			width: 30%;
+			float: left;
+		}
+		.s1 {
+			width: 45%;
+		}
 	}
 
 }
@@ -243,30 +289,79 @@ a {
 
 
 // Experience tab
-#exp-container {
+#resume-container {
+	background-color: $blue;
   display: none;
-	b {
+  padding: 10px 0;
+  width: 88%;
+      // display: -webkit-flex;
+      // display: flex;
+      // -webkit-flex-flow: row wrap;
+      // flex-flow: row wrap;
+  h3 {
+  	margin: 10px auto;
+  }
+  b {
 	  color: $orange;
 	}
-	.statement {
-	  font-weight: bold;
-	}
+	// For resume-left and resume-right
+  .resume-sub {
+  	background-color: #ffffff;
+  	border-radius: 10px;
+  	height: 100px;
+  	padding: 10px;
+  }
+}
 
-	.skills {
-	  font-weight: bold;
-	  font-family: arial;
-	  font-size: 18px;
+.resume-left {
+	// width: 30%;
+	// width: 250px;
+	display: inline-block;
+	float: right;
+	width: 220px;
+  .skills {
+  	width: 200px;
+  	margin-bottom: 20px;
+  }
+  .resume {
+  	width: 200px;
+  	a {
+  		display: block;
+  		margin-bottom: 4px;
+  	}
+  }
+}
+
+.resume-right {
+	// min-width: 320px;
+	width: 69%;
+	// width: 60%;
+	display: inline-block;
+	float: left;
+	@media screen and (max-width: 1000px) {
+		width: 65%;
 	}
+	@media screen and (max-width: 900px) {
+		width: 62%;
+	}
+	@media screen and (max-width: 800px) {
+		width: 57%;
+	}
+  .summary {
+  	width: 96%;
+  	// float: right;
+  	height: 300px;
+  }
 }
 
 
 // Contact tab
 #contact-container {
   display: none;
-  a {
-  	color: $orange;
-  	text-decoration: none;
-  }
+  // a {
+  // 	color: $orange;
+  // 	text-decoration: none;
+  // }
 	.headshot {
 	  width: 200px;
 	  border-radius: 5px;
@@ -278,7 +373,7 @@ a {
   }
   .contact-blurb {
   	display: inline-block;
-  	width: 58%;
+  	width: 56%;
   	margin-left: 4%;
   	p {
   		text-align: left;

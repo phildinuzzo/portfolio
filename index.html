@@ -5,6 +5,7 @@
 
 	  <meta charset="utf-8">
 	  <meta name="description" content="Phil DiNuzzo - SF based front end web developer">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	  <title>Phil DiNuzzo</title>
 
@@ -21,6 +22,8 @@
 	</head>
 
 	<body>
+
+	<div class="overlay"></div>
 
 		<div class="container">
 
@@ -40,12 +43,13 @@
 		    </div>
 
 		    <div class="navbar">
-		      <div id="portfolio" class="navbutton" data-height="1500px">PORTFOLIO</div>
+		      <div id="portfolio" class="navbutton" data-height="2000px">PORTFOLIO</div>
 		      <div id="resume" class="navbutton" data-height="800px">EXPERIENCE</div>
-		      <div id="contact" class="navbutton" data-height="630px">CONTACT</div>
+		      <div id="contact" class="navbutton" data-height="645px">CONTACT</div>
 		      <div class="slider slider-0"></div>
 		      <div class="slider slider-1"></div>
 		      <div class="slider slider-2"></div>
+<!-- 		      <div class="slider slider-3"></div> -->
 		    </div>
 		  </div>
 
@@ -59,20 +63,27 @@
 	<!-- PORTFOLIO -->
 	    <div id="portfolio-container" class="content-container">
 
-	        <div class="sweatguru">
+	        <div class="port-div sweatguru">
 	          <h2>SweatGuru</h2>
 	          <p>SF-based startup for fitness professionals and enthusiasts. Built on Django and Backbone.js. See more
 	          </p>
+
+<!-- 	          <img class="s1" src="assets/s3.png"> -->
+	          <img class="s1" src="assets/s4.png">
+<!-- 	          <img class="s1" src="assets/s5.png">
+	          <img class="s1" src="assets/s2.png"> -->
 	        </div>
 
-	        <div class="thelist">
+	        <div class="port-div thelist">
 	          <h2>The List</h2>
 	          <p>A Rails app presenting the The List, a <a href="http://www.stevelist.com/list" target="_blank">text-only list</a> of Bay Area concerts. It pulls the original text file daily and uses an extensive series of regular expressions to present the content in a sortable, searchable format.
 	          </p>
+	          <img src="assets/l2.png">
 	          <p><a class="link" href="http://thelistsf.heroku.com">Visit The List</a></p>
+
 	        </div>
 
-	        <div class="goodfood">
+	        <div class="port-div goodfood">
 	          <h2>GoodFood</h2>
 	          <p>A mobile-optimized Rails app utilizing Yelp and Google APIs. It finds resturants near you - but only ones that are highly rated and open now.
 	          </p>
@@ -89,37 +100,51 @@
 	<!-- EXPERIENCE -->
 	    <div id="resume-container" class="content-container">
 
-	      <div class="content">
-	      Two years ago I left my longtime position with a large non-profit to
+		    <div class="resume-left">
+		      <div class="resume-sub skills">
+		      	<h3>Skills</h3>
+		        <ul>
+		          <li>Ruby on Rails</li>
+		          <li>Javascript</li>
+		          <li>HTML and CSS</li>
+		        </ul>
+		      </div>
 
-	      <h3>Resume</h3>
-	      <a href="assets/resume.pdf" target="_blank" class="link">View as a PDF</a>
-	      <a href="https://docs.google.com/document/d/1h4Mw2XgU9cqLXpJ-dnA-TKJlhrpKDmq5wbhZzD2fKl4/edit?usp=sharing" target="_blank" class="link">View on Google Docs</a>
+		      <div class="resume-sub resume">
+			      <h3>Resume</h3>
+			      <a href="assets/resume.pdf" target="_blank" class="link">View as a PDF</a>
+			      <a href="https://docs.google.com/document/d/1h4Mw2XgU9cqLXpJ-dnA-TKJlhrpKDmq5wbhZzD2fKl4/edit?usp=sharing" target="_blank" class="link">View on Google Docs</a>
+			    </div>
+		    </div>
 
-<!-- 	        <p class="statement">I pride myself on my ability to learn quickly, teach others and work effectively with diverse personalities.</p>
-	        <p> I’ve honed project management skills over a 6-year career in affordable housing and people skills from several years in food service management. Building on my self-taught web design skills, I now aim to use my newly-refreshed web development experience to launch a career of building, problem-solving and continuous learning.</p>
-	        <p>My core skills include: -->
-	        <ul class="skills">
-	          <li>Ruby on Rails</li>
-	          <li>Javascript</li>
-	          <li>HTML and CSS</li>
-	        </ul>
-<!-- 	        <p>In addition to <b>Rails</b>, I've worked with <b>Sinatra</b> and have deployed both frameworks to <b>Heroku</b>. I also have experience with <b>HAML</b>, <b>Coffeescript</b> and <b>SCSS</b>. I have worked with many <b>GEMS</b> including <b>Omniauth, Devise, Geocoder</b> and <b>Nokogiri</b>.
-	        <p>
-	        <p>My Javascript skills include <b>JQuery</b> and associated libraries, including some work with <b>JQuery Mobile</b>. I have implemented <b>AJAX</b> in multiple projects and have strong familiarity with <b>JSON</b>.
-	        </p>
-	        <p>I have worked with many <b>APIs</b> including <b>Yelp, Facebook, Twitter, WeatherUnderground</b> and various <b>Google</b> APIs.
-	        </p>
-	        <p>I have frequently implemented <b>Test Driven Development</b>, primarily utilizing <b>RSPEC</b> and <b>SimpleCov</b>. I have used the <b>Benchmark</b> GEM for speed analysis. All of my version control is done with <b>Git</b>.
-	        </p>
-	        <p>In addition to my programming skills, I have familiarty with <b>Adobe</b> graphic design products, I'm proficient with both <b>PC and Mac</b>, and, most importantly, I have a relentless desire to <b>learn</b>! -->
+		    <div class="resume-right">
+			    <div class="resume-sub summary">
+			      <h3>SweatGuru</h3>
 
-	        <p><b><a class="link" href="resume.pdf">View my pre-programming resume (PDF)</a></b><p>
 
-	<!--          Building on my background in web design, I recently completed a 3 month immersive course in web development focusing on Ruby on Rails. I learned and implemented many of the latest web technolgies including. -->
-	         </p>
-	      </div>
 
+
+			      <h3>General Assembly</h3>
+
+			      <h3>Previous Experience</h3>
+
+
+						<!-- 	        <p class="statement">I pride myself on my ability to learn quickly, teach others and work effectively with diverse personalities.</p>
+		        <p> I’ve honed project management skills over a 6-year career in affordable housing and people skills from several years in food service management. Building on my self-taught web design skills, I now aim to use my newly-refreshed web development experience to launch a career of building, problem-solving and continuous learning.</p>
+		        <p>My core skills include: -->
+
+						<!-- 	        <p>In addition to <b>Rails</b>, I've worked with <b>Sinatra</b> and have deployed both frameworks to <b>Heroku</b>. I also have experience with <b>HAML</b>, <b>Coffeescript</b> and <b>SCSS</b>. I have worked with many <b>GEMS</b> including <b>Omniauth, Devise, Geocoder</b> and <b>Nokogiri</b>.
+		        <p>
+		        <p>My Javascript skills include <b>JQuery</b> and associated libraries, including some work with <b>JQuery Mobile</b>. I have implemented <b>AJAX</b> in multiple projects and have strong familiarity with <b>JSON</b>.
+		        </p>
+		        <p>I have worked with many <b>APIs</b> including <b>Yelp, Facebook, Twitter, WeatherUnderground</b> and various <b>Google</b> APIs.
+		        </p>
+		        <p>I have frequently implemented <b>Test Driven Development</b>, primarily utilizing <b>RSPEC</b> and <b>SimpleCov</b>. I have used the <b>Benchmark</b> GEM for speed analysis. All of my version control is done with <b>Git</b>.
+		        </p>
+		        <p>In addition to my programming skills, I have familiarty with <b>Adobe</b> graphic design products, I'm proficient with both <b>PC and Mac</b>, and, most importantly, I have a relentless desire to <b>learn</b>! -->
+
+		      </div>
+		    </div>
 	    </div>
 
 
@@ -139,7 +164,7 @@
 		      </div>
 
 		      <div class="contact-blurb">
-		        <p><a href="mailto:phil248@gmail.com.com?Subject=Hi%20Phil">Email me! </a>I'm currently looking for new oppurtunities, particularly with small companies. Shoot me an email or contact me on <a href="https://angel.co/phil-dinuzzo">AngelList</a>.</p>
+		        <p><a href="mailto:phil248@gmail.com.com?Subject=Hi%20Phil"><b>Email me! </b></a>I'm currently looking for new oppurtunities, particularly with small companies. Shoot me an email or contact me on <a href="https://angel.co/phil-dinuzzo">AngelList</a>.</p>
 		        <p>If you want to chat about <a href="http://thelistsf.herokuapp.com/">The List</a> or my experiences with General Assembly (or anything else), let's get a coffee in downtown SF. </p>
 	        </div>
 
