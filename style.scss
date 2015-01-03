@@ -52,6 +52,9 @@ a {
 		-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 	}
+	@media screen and (max-width: 500px) {
+		width: 100%;
+	}
 }
 
 // Top level container
@@ -67,10 +70,17 @@ a {
   box-shadow: 0 0 10px 5px #999;
   border-radius: 18px;
   margin: 20px auto 10px;
+  padding-bottom: 10px;
   z-index: 0;
+  @media screen and (max-width: 700px) {
+  	width: 100%;
+  	margin: 0;
+  	padding: 0;
+  	border-radius:0;
+  }
 }
 
-
+// HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .header {
 	position: relative;
 	display: none;
@@ -84,6 +94,10 @@ a {
 	  font-size: 52px;
 	  font-weight: bold;
 	  padding: 30px 50px 0 0 ;
+	  @media screen and (max-width: 700px) {
+	  	padding: 15px 25px 15px 0;
+	  	font-size: 42px;
+	  }
 	}
 	.toptext {
 	  position: absolute;
@@ -96,6 +110,16 @@ a {
 	  &:nth-child(2) {
 	  	top: 170px;
 	  }
+	  @media screen and (max-width: 700px) {
+	  	right: 34px;
+	  }
+	  @media screen and (max-width: 500px) {
+	  	font-size: 17px;
+		  top: 65px;
+		  &:nth-child(2) {
+		  	top: 90px;
+		  }
+	  }
 	}
 	.logo {
 	  padding: 10px;
@@ -105,11 +129,17 @@ a {
 				width: 30%;
 			}
 		}
+	  @media screen and (max-width: 500px) {
+	  	height: 130px;
+	  	img {
+	  		display: none;
+	  	}
+	  }
 	}
 }
 
 
-// NAVBAR
+// NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Arrow mixins
 @mixin arrow($width, $height, $top) {
 	top: $top;
@@ -231,6 +261,70 @@ a {
 	}
 }
 
+@media screen and (max-width: 700px) {
+	.navbar {
+		height: 90px;
+		padding: 0;
+		position: relative;
+		.navbutton {
+			display: block;
+			width: 100%;
+			height: 16px;
+			margin: 0 auto;
+			padding: 6px;
+			&.active {
+
+			  -webkit-transition: all 0.2s ease-in;
+			  transition: all 0.2s ease-in;
+			  -moz-transition: all 0.2s ease-in;
+			  -o-transition: all 0.2s ease-in;
+			  color: $red;
+			}
+		}
+	}
+}
+
+// Small screen nav arrows
+.nav-arrow-container {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 100%;
+	height: 90px;
+	z-index: -1;
+	.nav-arrow {
+		position: relative;
+		left: -49%;
+		top: -30px;
+		margin: 0 auto;
+		width: 180px;
+		height: 16px;
+		font-size: 0;
+		line-height: 0;
+		vertical-align: middle;
+		border-left: 0 solid $red;
+		border-right: 0 solid $red;
+		&:before, &:after {
+	    content:'';
+	    width:0;
+	    height:0;
+	    border-top: 8px solid transparent;
+	    border-bottom: 8px solid transparent;
+	    position: absolute;
+	    top: 0;
+		}
+		&:before {
+	    border-left: 12px solid $red;
+	   	left: 0;
+		}
+		&:after {
+	    border-right: 12px solid $red;
+	    right: 0;
+		}
+	}
+}
+
 
 
 // Tab containers
@@ -242,11 +336,15 @@ a {
   min-height: 40px;
   background-color: #ffffff;
   border-radius: 10px;
+  @media screen and (max-width: 700px) {
+  	width: 95%;
+  }
+  .content {
+  	position: relative;
+  }
 }
 
 // Portfolio images
-
-
 .img-holder {
 	position: relative;
 	width: 45%;
@@ -278,14 +376,10 @@ a {
 	}
 }
 
-
-
-
-
-
 // Portfolio tab
 #portfolio-container {
   display: none;
+  padding: 25px 0;
 	h2 {
 	  font-family: arial;
 	  font-size: 26px;
@@ -314,8 +408,6 @@ a {
   // GoodFood section ~~~~~
 	.goodfood {
 		p {
-			// width: 60%;
-			// float: right;
 			margin-top: 80px;
 		}
 		img {
@@ -325,10 +417,12 @@ a {
 	// The List section ~~~~~
 	.thelist {
 		min-height: 350px;
+		padding-top: 20px;
+		background-color: lighten($blue, 60%);
 		p {
 			float: left;
 			width: 45%;
-			// margin-top: 30px;
+			padding-left: 20px;
 		}
 		.img-holder {
 			float: right;
@@ -338,10 +432,6 @@ a {
 	.sweatguru {
 		p {
 			float: right;
-		}
-		img {
-			// width: 30%;
-			// float: left;
 		}
 		.s1 {
 			// width: 45%;
@@ -357,7 +447,7 @@ a {
 #resume-container {
 	background-color: $blue;
   display: none;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   width: 88%;
   h3 {
   	margin: 10px auto;
@@ -372,6 +462,7 @@ a {
   	border-radius: 10px;
   	height: auto;
   	padding: 10px;
+  	margin-bottom: 10px;
   	h3 {
   		margin-left: 15px;
   	}
@@ -433,6 +524,7 @@ a {
 	}
   .social {
   	float: right;
+  	width: 200px;
   }
   .contact-blurb {
   	display: inline-block;
@@ -442,29 +534,41 @@ a {
   		text-align: left;
   	}
   }
+  @media screen and (max-width: 550px) {
+  	width: 90%;
+  	.content {
+  		width: 100%;
+  		margin: 0 auto;
+  		img {
+  			width: 30%;
+  		}
+  		.contact-blurb {
+  			width: 60%;
+  		}
+  		.social {
+  			// width: 35px;
+  			// display: inline-block;
+  			margin: 10px 5px 0 0;
+  		}
+  	}
+  }
 }
 
 
 
-// Media queries
-@media screen and (max-width: 750px) {
-	// .header {
-	// 	.name {
-	// 		text-align: center;
-	// 		padding: 0;
-	// 	}
-	// 	.logo > img {
-	// 		display: none;
-	// 	}
-	// }
+// Media queries for content tabs
+@media screen and (max-width: 700px) {
+	.content-container {
+  	min-width: 95%;
+   }
+	#contact-container {
+		padding: 10px;
+	}
 }
 
-@media screen and (max-width: 400px) {
-	.header {
-		display: none;
-	}
-	.m-header {
-		display: block;
-	}
-
+@media screen and (max-width: 500px) {
+	.content-container {
+  	width: 100%;
+  	border-radius: 0;
+   }
 }

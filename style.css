@@ -37,6 +37,9 @@ a {
     width: 100%;
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); }
+  @media screen and (max-width: 500px) {
+    .modal {
+      width: 100%; } }
 
 .container {
   background-color: #42617c;
@@ -50,7 +53,14 @@ a {
   box-shadow: 0 0 10px 5px #999;
   border-radius: 18px;
   margin: 20px auto 10px;
+  padding-bottom: 10px;
   z-index: 0; }
+  @media screen and (max-width: 700px) {
+    .container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border-radius: 0; } }
 
 .header {
   position: relative;
@@ -64,6 +74,10 @@ a {
     font-size: 52px;
     font-weight: bold;
     padding: 30px 50px 0 0; }
+    @media screen and (max-width: 700px) {
+      .header .name {
+        padding: 15px 25px 15px 0;
+        font-size: 42px; } }
   .header .toptext {
     position: absolute;
     float: right;
@@ -74,12 +88,26 @@ a {
     top: 130px; }
     .header .toptext:nth-child(2) {
       top: 170px; }
+    @media screen and (max-width: 700px) {
+      .header .toptext {
+        right: 34px; } }
+    @media screen and (max-width: 500px) {
+      .header .toptext {
+        font-size: 17px;
+        top: 65px; }
+        .header .toptext:nth-child(2) {
+          top: 90px; } }
   .header .logo {
     padding: 10px;
     height: 230px; }
     @media screen and (max-width: 800px) {
       .header .logo img {
         width: 30%; } }
+    @media screen and (max-width: 500px) {
+      .header .logo {
+        height: 130px; }
+        .header .logo img {
+          display: none; } }
 
 .glow {
   animation: glow .7s ease-out infinite alternate;
@@ -239,6 +267,58 @@ a {
     width: 15px;
     height: 15px; }
 
+@media screen and (max-width: 700px) {
+  .navbar {
+    height: 90px;
+    padding: 0;
+    position: relative; }
+    .navbar .navbutton {
+      display: block;
+      width: 100%;
+      height: 16px;
+      margin: 0 auto;
+      padding: 6px; }
+      .navbar .navbutton.active {
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        color: #c70e1a; } }
+.nav-arrow-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 90px;
+  z-index: -1; }
+  .nav-arrow-container .nav-arrow {
+    position: relative;
+    left: -49%;
+    top: -30px;
+    margin: 0 auto;
+    width: 180px;
+    height: 16px;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    border-left: 0 solid #c70e1a;
+    border-right: 0 solid #c70e1a; }
+    .nav-arrow-container .nav-arrow:before, .nav-arrow-container .nav-arrow:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      position: absolute;
+      top: 0; }
+    .nav-arrow-container .nav-arrow:before {
+      border-left: 12px solid #c70e1a;
+      left: 0; }
+    .nav-arrow-container .nav-arrow:after {
+      border-right: 12px solid #c70e1a;
+      right: 0; }
+
 .content-container {
   display: none;
   margin: 5px auto 20px auto;
@@ -247,6 +327,11 @@ a {
   min-height: 40px;
   background-color: #ffffff;
   border-radius: 10px; }
+  @media screen and (max-width: 700px) {
+    .content-container {
+      width: 95%; } }
+  .content-container .content {
+    position: relative; }
 
 .img-holder {
   position: relative;
@@ -275,7 +360,8 @@ a {
     -o-transition: opacity 0.4s ease-in; }
 
 #portfolio-container {
-  display: none; }
+  display: none;
+  padding: 25px 0; }
   #portfolio-container h2 {
     font-family: arial;
     font-size: 26px;
@@ -297,10 +383,13 @@ a {
   #portfolio-container .goodfood img {
     width: 48%; }
   #portfolio-container .thelist {
-    min-height: 350px; }
+    min-height: 350px;
+    padding-top: 20px;
+    background-color: #f6f8fa; }
     #portfolio-container .thelist p {
       float: left;
-      width: 45%; }
+      width: 45%;
+      padding-left: 20px; }
     #portfolio-container .thelist .img-holder {
       float: right; }
   #portfolio-container .sweatguru p {
@@ -309,7 +398,7 @@ a {
 #resume-container {
   background-color: #42617c;
   display: none;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   width: 88%; }
   #resume-container h3 {
     margin: 10px auto; }
@@ -320,7 +409,8 @@ a {
     background-color: #ffffff;
     border-radius: 10px;
     height: auto;
-    padding: 10px; }
+    padding: 10px;
+    margin-bottom: 10px; }
     #resume-container .resume-sub h3 {
       margin-left: 15px; }
 
@@ -367,17 +457,34 @@ a {
     float: left;
     margin-top: 15px; }
   #contact-container .social {
-    float: right; }
+    float: right;
+    width: 200px; }
   #contact-container .contact-blurb {
     display: inline-block;
     width: 56%;
     margin-left: 4%; }
     #contact-container .contact-blurb p {
       text-align: left; }
+  @media screen and (max-width: 550px) {
+    #contact-container {
+      width: 90%; }
+      #contact-container .content {
+        width: 100%;
+        margin: 0 auto; }
+        #contact-container .content img {
+          width: 30%; }
+        #contact-container .content .contact-blurb {
+          width: 60%; }
+        #contact-container .content .social {
+          margin: 10px 5px 0 0; } }
 
-@media screen and (max-width: 400px) {
-  .header {
-    display: none; }
+@media screen and (max-width: 700px) {
+  .content-container {
+    min-width: 95%; }
 
-  .m-header {
-    display: block; } }
+  #contact-container {
+    padding: 10px; } }
+@media screen and (max-width: 500px) {
+  .content-container {
+    width: 100%;
+    border-radius: 0; } }

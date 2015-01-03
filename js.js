@@ -28,17 +28,33 @@ $(document).ready(function() {
 		});
 	}
 
+// Small screen navbar
+	$(window).on('resize', function(e){
+		if ($(e.target).width() < 700) {
+			$('.nav-arrow-container').show();
+		} else {
+			$('.nav-arrow-container').hide();
+		}
+	})
+
 // Change tabs function
 	var navAction = function(e, boolean) {
 		var self = this;
 		if (!$(this).hasClass('active')) {
 			$(this).addClass('active').siblings().removeClass('active');
 			// Navbar animation
-			if (!boolean === true) {
+			if (!boolean === true && $(window).width() > 700) {
 				for (var i = 0; i < $('.circle').length; i++) {
-					navSlider($('.navbar').width() - ($('.active').position().left) + (i * 70) - 100, i.toString());
+					navSlider($('.navbar').width() + ($('.active').position().left/2) + (i * 70) - 300, i.toString());
 				}
+			} else {
+				$('.nav-arrow-container').show();
 			}
+			// Small screen Navbar animation
+			var navHeight = $('.navbutton').outerHeight();
+			$('.nav-arrow').animate({
+				top: navHeight * $(this).data('top') - (navHeight/1.5) + 'px',
+			}, 500);
 
 			// Content
 			$('.content-container').fadeOut(400);
@@ -46,24 +62,20 @@ $(document).ready(function() {
 				height: $(this).data('height'),
 			}, 500, function() {
 				$('#' + $(self).attr('id') + '-container').fadeIn(300);
-				// $('.container').delay(5000).css({'min-height': $(self).data('height'), height: 'auto'});
-
 			});
 		}
 	}
 
-	// Fade in the main div, enable navbar click and check for hash
+	// Fade in the main div, enable navbar click and check for hash, screen size
   $('.header').delay(300).fadeIn(600, 'swing', function() {
   	$('.navbutton').on('click', navAction);
   	if(window.location.hash) {
   		$(window.location.hash).trigger('click', true);
   	}
+  	if ($(window).width() < 700) {
+  		$('.nav-arrow-container').show();
+  	}
   });
-
-  // // Add magnifying glass icon
-  // $('.img-click').each(function(){
-  // 	// $(this).css('background-image', 'url("assets/mag-icon.svg")');
-  // });
 
   // Image modal
   var $overlay = $('.overlay');
