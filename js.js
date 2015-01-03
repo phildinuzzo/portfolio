@@ -13,10 +13,10 @@ $(document).ready(function() {
 
 // Some navbar animation
 	var navSlider = function(speed, i) {
-		$('.slider-' + i).show().animate({
+		$('.circle-' + i).show().animate({
 			right: $('.navbar').width() - $('.active').position().left - ($('.active').width()/2) + 'px',
 		}, speed, function() {
-			$('.slider-' + i).fadeOut(500).css({
+			$('.circle-' + i).fadeOut(500).css({
 				right: '-200px',
 			});
 
@@ -32,11 +32,11 @@ $(document).ready(function() {
 	var navAction = function(e, boolean) {
 		var self = this;
 		if (!$(this).hasClass('active')) {
-			// Navbar
 			$(this).addClass('active').siblings().removeClass('active');
+			// Navbar animation
 			if (!boolean === true) {
-				for (var i = 0; i < $('.slider').length; i++) {
-					navSlider(450 + (i * 80), i.toString());
+				for (var i = 0; i < $('.circle').length; i++) {
+					navSlider($('.navbar').width() - ($('.active').position().left) + (i * 70) - 100, i.toString());
 				}
 			}
 
@@ -46,8 +46,9 @@ $(document).ready(function() {
 				height: $(this).data('height'),
 			}, 500, function() {
 				$('#' + $(self).attr('id') + '-container').fadeIn(300);
-			});
+				// $('.container').delay(5000).css({'min-height': $(self).data('height'), height: 'auto'});
 
+			});
 		}
 	}
 
@@ -59,19 +60,22 @@ $(document).ready(function() {
   	}
   });
 
+  // // Add magnifying glass icon
+  // $('.img-click').each(function(){
+  // 	// $(this).css('background-image', 'url("assets/mag-icon.svg")');
+  // });
 
   // Image modal
-  // var url = $(e.target).data('url');
-  // if (url) {
-  //     $('.photo-modal-dialog').hide();
-  //     $('#photo-holder > img').remove();
-  //     $('#photo-holder').append('<img src=' + url + '>');
-  //     $('#view-photo').modal({backdrop: 'false'});
-  //     setTimeout(function(){
-  //         $('.photo-modal-dialog').fadeIn(400);
-  //     }, 200);
-  // }
-
+  var $overlay = $('.overlay');
+  $('.img-holder').on('click', function(){
+  	$overlay.show();
+  	$('body').append('<div class="modal"><img src="' + $(this).children('img').attr('src') + '"></div>');
+  	$('.modal').fadeIn(200);
+  	$overlay.on('click', function(){
+  		$overlay.fadeOut(300);
+  		$('.modal').remove();
+  	});
+  });
 
 
 });
