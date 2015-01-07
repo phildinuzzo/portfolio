@@ -1,3 +1,5 @@
+@import 'mixins';
+
 // Variables
 $red: #C70E1A;
 $blue: #42617c;
@@ -211,6 +213,7 @@ a {
 	  text-decoration: none;
 	  color: $red;
 	}
+	// Alternate navbar animation
 	.slider {
 		display: none;
 		position: absolute;
@@ -273,7 +276,6 @@ a {
 			margin: 0 auto;
 			padding: 6px;
 			&.active {
-
 			  -webkit-transition: all 0.2s ease-in;
 			  transition: all 0.2s ease-in;
 			  -moz-transition: all 0.2s ease-in;
@@ -470,10 +472,12 @@ a {
 }
 
 .resume-left {
-	float: right;
-	width: 220px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 15px;
+	width: 200px;
   .skills {
-  	width: 200px;
+  	width: 180px;
   	margin-bottom: 20px;
   	ul {
   		margin: 0 0 10px 35px;
@@ -486,7 +490,7 @@ a {
   	}
   }
   .resume {
-  	width: 200px;
+  	width: 180px;
   	a {
   		display: block;
   		margin: 5px 0 10px 30px;
@@ -495,16 +499,16 @@ a {
 }
 
 .resume-right {
-	width: 69%;
-	float: left;
+	width: 70%;
+	display: inline-block;
 	@media screen and (max-width: 1000px) {
-		width: 65%;
+		width: 69%;
 	}
 	@media screen and (max-width: 900px) {
-		width: 62%;
+		width: 67%;
 	}
-	@media screen and (max-width: 800px) {
-		width: 57%;
+	@media screen and (max-width: 850px) {
+		width: 61%;
 	}
   .summary {
   	width: 96%;
@@ -524,7 +528,7 @@ a {
 	}
   .social {
   	float: right;
-  	width: 200px;
+  	width: 240px;
   }
   .contact-blurb {
   	display: inline-block;
@@ -546,8 +550,6 @@ a {
   			width: 60%;
   		}
   		.social {
-  			// width: 35px;
-  			// display: inline-block;
   			margin: 10px 5px 0 0;
   		}
   	}
@@ -559,7 +561,8 @@ a {
 // Media queries for content tabs
 @media screen and (max-width: 700px) {
 	.content-container {
-  	min-width: 95%;
+  	min-width: 100%;
+  	border-radius: 0;
    }
 	#contact-container {
 		padding: 10px;
