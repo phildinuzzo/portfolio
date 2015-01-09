@@ -41,9 +41,10 @@
 		    </div>
 
 		    <div class="navbar">
-		      <div id="portfolio" class="navbutton" data-height="2000px" data-top="1">PORTFOLIO</div>
-		      <div id="resume" class="navbutton" data-height="1500px" data-top="2">EXPERIENCE</div>
-		      <div id="contact" class="navbutton" data-height="700px" data-top="3">CONTACT</div>
+		      <div id="portfolio" class="navbutton" data-height="2000px" data-top-value="9.3px" data-top="1">PORTFOLIO</div>
+		      <div id="resume" class="navbutton" data-height="1500px" data-top-value="37.3px" data-top="2">EXPERIENCE</div>
+		      <div id="contact" class="navbutton" data-height="700px" data-top-value="65.3px" data-top="3">CONTACT</div>
+		      <!-- Divs for alt navbar animation -->
 <!-- 		  <div class="slider slider-0"></div>
 		      <div class="slider slider-1"></div>
 		      <div class="slider slider-2"></div> -->
@@ -72,13 +73,20 @@
 							<span class="mag-icon"></span>
 	          </div>
 
+	          <div class="thumbnails">
+	          	<img class="modal-image" src="assets/s1.png">
+	          	<img class="modal-image" src="assets/s2.png">
+	          	<img class="modal-image" src="assets/s3.png">
+	          	<img class="modal-image" src="assets/s5.png">
+	          	<img class="modal-image" src="assets/s5.png">
+	          </div>
+
 	        </div>
 
 	        <div class="port-div thelist">
 	          <h2>The List</h2>
 	          <p>A Rails app presenting The List, a <a href="http://www.stevelist.com/list" target="_blank">text-only list</a> of Bay Area concerts. It pulls the original text file daily and uses an extensive series of regular expressions to present the content in a sortable, searchable format.
 	          </p>
-
 
 
 						<div class="img-holder">
@@ -97,36 +105,48 @@
 	          <img src="assets/goodfoodphone.png">
 	        </div>
 
-
-
 	    </div>
-
 
 
 
 	<!-- EXPERIENCE -->
 	    <div id="resume-container" class="content-container">
 
-
-
 		    <div class="resume-right">
 			    <div class="resume-sub summary">
 			      <h3>SweatGuru</h3>
 			      <p>
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				      As the primary front end developer at SweatGuru, I worked closely with the founders and our three-person engineering team to rebuild nearly every component of this SaaS-style web app. My accomplishments at SweatGuru include...
 			      </p>
-
-
+			      <ul>
+				      <li>
+				      	Design and implementation of mutliple custom calendars and schedulding tools.
+				      </li>
+				      <li>
+				      	Rebuilt primary business dashboard and created a new user dashboard.
+				      </li>
+				      <li>
+				      	Built public profile pages with extensive social media integration.
+				      </li>
+				      <li>
+				      	Implemented rating, commenting and favoriting systems for public-facing profiles.
+				      </li>
+				      <li>
+				      	Worked with founders and designers on site layout and UI/UX, with significant contributions to all interative site elements.
+				      </li>
+				      <li>
+				      	Acted as the engineering liason with clients to resolve issues and assist in intgerating their sites with SweatGuru.
+				      </li>
+			      </ul>
 
 			      <h3>General Assembly</h3>
 			      <p>
-
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			      	Building on my self-taught web development skills, I completed a full-time, 12-week programming course with General Assembly focusing on Ruby on Rails and front end technolgoies.
 			      </p>
 
 			      <h3>Previous Experience</h3>
 			      <p>
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			      	Prior to professional programming, I worked in project management and compliance for BRIDGE Housing, California's largest non-profit housing developer. While my role was largely non-technical, I did work extensivley on a companywide rollout of Yardi, a SaaS for property management, including QA and extensive staff training.
 			      </p>
 
 		      </div>
@@ -151,15 +171,12 @@ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, wh
 
 		      <div class="resume-sub resume">
 			      <h3>Resume</h3>
-			      <a href="assets/resume.pdf" target="_blank">View as a PDF</a>
-			      <a href="https://docs.google.com/document/d/1h4Mw2XgU9cqLXpJ-dnA-TKJlhrpKDmq5wbhZzD2fKl4/edit?usp=sharing" target="_blank">View on Google Docs</a>
+			      <a href="assets/resume.pdf" target="_blank">&rarr; View as a PDF</a>
+			      <a href="https://docs.google.com/document/d/1h4Mw2XgU9cqLXpJ-dnA-TKJlhrpKDmq5wbhZzD2fKl4/edit?usp=sharing" target="_blank">&rarr; View on Google Docs</a>
 			    </div>
 		    </div>
 
-
-
 	    </div>
-
 
 
 
@@ -169,12 +186,12 @@ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, wh
 	        <img class="headshot" src="assets/me.png">
 
 					<div class="social">
-						<a class="email_square32 tsc_social_square32" title="email" href="mailto:phil248@gmail.com.com?Subject=Hi%20Phil" target="_blank">email</a>
-		        <a class="linkedin_square32 tsc_social_square32" title="linkedin" href="http://www.linkedin.com/in/phildinuzzo" target="_blank">linkedin</a>
-		        <a class="github_square32 tsc_social_square32" title="github" href="https://github.com/phildinuzzo" target="_blank"></a>
-		        <a class="quora_square32 tsc_social_square32" title="quora" href="http://www.quora.com/Phil-DiNuzzo" target="_blank">quora</a>
-		        <a class="twitter2_square32 tsc_social_square32" title="twitter" href="https://twitter.com/PhilDiNuzzo" target="_blank"></a>
-		        <a class="googleplus2_square32 tsc_social_square32" title="google+" href="https://plus.google.com/+PhilDiNuzzo/about" target="_blank">google+</a>
+						<a class="email_square32 tsc_social_square32" title="email" href="mailto:phil248@gmail.com.com?Subject=Hi%20Phil" target="_blank">Email</a>
+		        <a class="linkedin_square32 tsc_social_square32" title="linkedin" href="http://www.linkedin.com/in/phildinuzzo" target="_blank">LinkedIn</a>
+		        <a class="github_square32 tsc_social_square32" title="github" href="https://github.com/phildinuzzo" target="_blank">GitHub</a>
+		        <a class="quora_square32 tsc_social_square32" title="quora" href="http://www.quora.com/Phil-DiNuzzo" target="_blank">Quora</a>
+		        <a class="twitter2_square32 tsc_social_square32" title="twitter" href="https://twitter.com/PhilDiNuzzo" target="_blank">Twitter</a>
+		        <a class="googleplus2_square32 tsc_social_square32" title="google+" href="https://plus.google.com/+PhilDiNuzzo/about" target="_blank">G+</a>
 		      </div>
 
 		      <div class="contact-blurb">

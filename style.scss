@@ -1,9 +1,5 @@
+// Fonts, variables and mixins:
 @import 'mixins';
-
-// Variables
-$red: #C70E1A;
-$blue: #42617c;
-$orange: #E34242;
 
 body {
 	background-color: #FBFBFB;
@@ -13,9 +9,18 @@ body {
   min-height: 1000px;
 }
 
-p {
+p, li {
   font-family: arial;
   font-size: 18px;
+}
+
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+h2, h3 {
+	font-family: arial;
 }
 
 a {
@@ -71,7 +76,7 @@ a {
   -webkit-box-shadow: 0 0 10px 5px #999;
   box-shadow: 0 0 10px 5px #999;
   border-radius: 18px;
-  margin: 20px auto 10px;
+  margin: 20px auto 30px;
   padding-bottom: 10px;
   z-index: 0;
   @media screen and (max-width: 700px) {
@@ -142,30 +147,6 @@ a {
 
 
 // NAVBAR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Arrow mixins
-@mixin arrow($width, $height, $top) {
-	top: $top;
-	width: 0;
-	height: 0;
-	border-bottom: $height solid transparent;
-	border-top: $height solid transparent;
-	border-right: $width solid #ffffff;
-	font-size: 0;
-	line-height: 0;
-	vertical-align: middle;
-	&:before {
-    content:'';
-    width:0;
-    height:0;
-    border-top: $height solid transparent;
-    border-bottom: $height solid transparent;
-    border-right: $width solid $orange;
-    position: absolute;
-    top: -$height;
-    left: -$width;
-	}
-}
-
 // Navbar glow animation
 .glow {
    animation: glow .7s ease-out infinite alternate;
@@ -213,7 +194,7 @@ a {
 	  text-decoration: none;
 	  color: $red;
 	}
-	// Alternate navbar animation
+	// For alternate navbar animation
 	.slider {
 		display: none;
 		position: absolute;
@@ -236,6 +217,7 @@ a {
 		// right: 50px;
 		@include arrow(10px, 25px, 0);
 	}
+	// For Navbar circle animation
 	.circle {
 		display: none;
 		position: absolute;
@@ -383,65 +365,72 @@ a {
   display: none;
   padding: 25px 0;
 	h2 {
-	  font-family: arial;
 	  font-size: 26px;
 	  text-align: center;
 	}
-  > div {
-  	padding-bottom: 20px;
-  	> p {
-  		width: 80%;
-  		margin: 0 auto;
-  	}
-  }
-  // All portfolio sections ~~~
-  .port-div {
-  	min-height: 250px;
-  	p {
-  		float: right;
-  		width: 50%
-  	}
-  	img {
-  		width: 100%;
-  	}
-
-  }
-
-  // GoodFood section ~~~~~
-	.goodfood {
-		p {
-			margin-top: 80px;
-		}
-		img {
-			width: 48%;
-		}
-	}
-	// The List section ~~~~~
-	.thelist {
-		min-height: 350px;
-		padding-top: 20px;
-		background-color: lighten($blue, 60%);
-		p {
-			float: left;
-			width: 45%;
-			padding-left: 20px;
-		}
-		.img-holder {
-			float: right;
-		}
-	}
-	// SweatGuru section ~~~~
-	.sweatguru {
-		p {
-			float: right;
-		}
-		.s1 {
-			// width: 45%;
-		}
-	}
-
 }
 
+// All portfolio sections ~~~
+.port-div {
+	padding: 0 10px 20px 10px;
+	min-height: 250px;
+	p {
+		float: right;
+		width: 80%;
+		margin: 0 auto;
+	}
+	img {
+		width: 100%;
+	}
+}
+
+// GoodFood section ~~~~~
+.goodfood {
+	p {
+		margin-top: 80px;
+	}
+	img {
+		width: 48%;
+	}
+}
+
+// The List section ~~~~~
+.thelist {
+	min-height: 350px;
+	padding-top: 20px;
+	background-color: lighten($blue, 60%);
+	p {
+		float: left;
+		width: 45%;
+		padding-left: 20px;
+	}
+	.img-holder {
+		float: right;
+	}
+}
+
+// SweatGuru section ~~~~
+.sweatguru {
+	p {
+		float: right;
+	}
+	.s1 {
+		// width: 45%;
+	}
+	.thumbnails {
+		width: 95%;
+		height: 70px;
+		margin: 20px auto 0;
+		text-align: center;
+		img {
+			height: 70px;
+			cursor: pointer;
+			display: inline-block;
+			width: auto;
+			margin: 0 5px;
+		}
+	}
+}
 
 
 
@@ -452,7 +441,9 @@ a {
   padding: 0 0 10px 0;
   width: 88%;
   h3 {
+  	font-size: 22px;
   	margin: 10px auto;
+  	padding-top: 10px;
   }
   b {
 	  color: $orange;
@@ -464,7 +455,7 @@ a {
   	border-radius: 10px;
   	height: auto;
   	padding: 10px;
-  	margin-bottom: 10px;
+  	margin-bottom: 20px;
   	h3 {
   		margin-left: 15px;
   	}
@@ -481,8 +472,6 @@ a {
   	margin-bottom: 20px;
   	ul {
   		margin: 0 0 10px 35px;
-  		padding: 0;
-  		list-style-type: none;
   		li {
   			letter-spacing: 1px;
   			padding-top: 4px;
@@ -501,6 +490,28 @@ a {
 .resume-right {
 	width: 70%;
 	display: inline-block;
+  .summary {
+  	width: 96%;
+  	height: 300px;
+  	p {
+  		width: 95%;
+  		margin: 0 auto 30px;
+  	}
+  	p:nth-of-type(1) {
+  		margin-bottom: 15px;
+  	}
+  	ul {
+  		list-style-type: square;
+  		margin: 0;
+  		padding: 0 0 20px 30px;
+  		width: 85%;
+  		li {
+  			font-size: 16px;
+  			font-weight: bold;
+  			padding-bottom: 8px;
+  		}
+  	}
+  }
 	@media screen and (max-width: 1000px) {
 		width: 69%;
 	}
@@ -510,10 +521,6 @@ a {
 	@media screen and (max-width: 850px) {
 		width: 61%;
 	}
-  .summary {
-  	width: 96%;
-  	height: 300px;
-  }
 }
 
 
@@ -550,7 +557,13 @@ a {
   			width: 60%;
   		}
   		.social {
+  			width: 225px;
   			margin: 10px 5px 0 0;
+  			a {
+  				background-size: 80%;
+  				padding: 0;
+  				width: 28px;
+  			}
   		}
   	}
   }
@@ -565,13 +578,14 @@ a {
   	border-radius: 0;
    }
 	#contact-container {
+		min-width: 98%;
 		padding: 10px;
 	}
 }
 
 @media screen and (max-width: 500px) {
 	.content-container {
-  	width: 100%;
+  	width: 98%;
   	border-radius: 0;
    }
 }
