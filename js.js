@@ -2,20 +2,20 @@ $(document).ready(function() {
 
 // NOTES
 
-// SPELLCHECK EVERYTHING
-// Add github link to portfolio items
-// Check navbar at small screen size (using hash links!)
+// JS
+// Check navbar at small screen size when using hash links
+
+// IMAGES
+// Convert to data-uri
+// Possibly pre-load more images
 
 // CSS
-// Implement @font stuff for fonts
-// Organize media queries
+// Implement @font for fonts
+// Improve Experience media queries, small screen format
+// Mixins for Circle class?
 
-// Experience COPY
-// Experience RESIZE
-
-// Portfolio COPY
-// Portfolio LINKS (Git hub, project link)
-// Portfolio RESIZE
+// HTML
+// Refacotor to remove hardcoded data-attr
 
 
 // Preload large images, background first
@@ -95,6 +95,10 @@ $(document).ready(function() {
 				height: $(this).data('height'),
 			}, 500, function() {
 				$('#' + $(self).attr('id') + '-container').fadeIn(300);
+        // Set container height to auto for condensed screen sizes
+        if ($(window).width() < 500) {
+          $('.container').css('height', 'auto');
+        }
 			});
 		}
 	}

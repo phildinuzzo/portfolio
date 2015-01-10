@@ -3,7 +3,7 @@ $red: #C70E1A;
 $blue: #42617c;
 $orange: #E34242;
 
-// Arrow mixins
+// Arrow mixin
 @mixin arrow($width, $height, $top) {
 	top: $top;
 	width: 0;
@@ -25,4 +25,11 @@ $orange: #E34242;
     top: -$height;
     left: -$width;
 	}
+}
+
+// Circle mixin
+@mixin circles($top, $size) {
+	top: $top;
+	width: $size;
+	height: $size;
 }

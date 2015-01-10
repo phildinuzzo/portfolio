@@ -62,13 +62,13 @@ a {
   margin: 20px auto 30px;
   padding-bottom: 10px;
   z-index: 0; }
-  @media screen and (max-width: 700px) {
-    .container {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      border-radius: 0; } }
 
+@media screen and (max-width: 700px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0; } }
 .header {
   position: relative;
   display: none; }
@@ -334,9 +334,6 @@ a {
   min-height: 40px;
   background-color: #ffffff;
   border-radius: 10px; }
-  @media screen and (max-width: 700px) {
-    .content-container {
-      width: 95%; } }
   .content-container .content {
     position: relative; }
 
@@ -417,13 +414,11 @@ a {
   background-color: #42617c;
   display: none;
   padding: 0 0 10px 0;
-  width: 88%; }
+  width: 90%; }
   #resume-container h3 {
     font-size: 22px;
     margin: 10px auto;
     padding-top: 10px; }
-  #resume-container b {
-    color: #e34242; }
   #resume-container .resume-sub {
     display: inline-block;
     background-color: #ffffff;
@@ -436,6 +431,7 @@ a {
 
 .resume-left {
   display: inline-block;
+  float: right;
   vertical-align: top;
   margin-left: 15px;
   width: 200px; }
@@ -454,7 +450,7 @@ a {
       margin: 5px 0 10px 30px; }
 
 .resume-right {
-  width: 70%;
+  width: 72%;
   display: inline-block; }
   .resume-right .summary {
     width: 96%;
@@ -473,15 +469,61 @@ a {
         font-size: 16px;
         font-weight: bold;
         padding-bottom: 8px; }
-  @media screen and (max-width: 1000px) {
-    .resume-right {
-      width: 69%; } }
-  @media screen and (max-width: 900px) {
-    .resume-right {
-      width: 67%; } }
-  @media screen and (max-width: 850px) {
-    .resume-right {
-      width: 61%; } }
+
+@media screen and (max-width: 700px) {
+  #resume-container h3 {
+    font-size: 18px; }
+  #resume-container .resume-sub {
+    border-radius: 0;
+    margin-bottom: 0; }
+    #resume-container .resume-sub h3 {
+      margin-left: 10px; }
+
+  .resume-left {
+    width: 100px;
+    margin-right: 15px;
+    text-align: left; }
+    .resume-left .skills {
+      width: 100px;
+      margin-bottom: 0; }
+      .resume-left .skills ul {
+        margin: 0 0 10px 0; }
+        .resume-left .skills ul li {
+          letter-spacing: normal;
+          font-size: 15px; }
+    .resume-left .resume {
+      width: 100px;
+      font-size: 15px; }
+      .resume-left .resume a {
+        margin: 0 0 10px 0; }
+
+  .resume-right .summary {
+    width: 98%; }
+    .resume-right .summary p {
+      font-size: 15px; }
+    .resume-right .summary ul li {
+      font-size: 15px; } }
+@media screen and (max-width: 1000px) {
+  .resume-right {
+    width: 69%; } }
+@media screen and (max-width: 900px) {
+  .resume-right {
+    width: 67%; } }
+@media screen and (max-width: 850px) {
+  .resume-right {
+    width: 61%; } }
+@media screen and (max-width: 700px) {
+  .resume-right {
+    width: 77%; } }
+@media screen and (max-width: 600px) {
+  .resume-right {
+    width: 73%; } }
+@media screen and (max-width: 500px) {
+  .resume-right {
+    width: 66%; } }
+@media screen and (max-width: 400px) {
+  .resume-right {
+    width: 61%; } }
 
 #contact-container {
   display: none; }
@@ -499,26 +541,27 @@ a {
     margin-left: 4%; }
     #contact-container .contact-blurb p {
       text-align: left; }
-  @media screen and (max-width: 550px) {
-    #contact-container {
-      width: 90%; }
-      #contact-container .content {
-        width: 100%;
-        margin: 0 auto; }
-        #contact-container .content img {
-          width: 30%; }
-        #contact-container .content .contact-blurb {
-          width: 60%; }
-        #contact-container .content .social {
-          width: 225px;
-          margin: 10px 5px 0 0; }
-          #contact-container .content .social a {
-            background-size: 80%;
-            padding: 0;
-            width: 28px; } }
 
+@media screen and (max-width: 550px) {
+  #contact-container {
+    width: 90%; }
+    #contact-container .content {
+      width: 100%;
+      margin: 0 auto; }
+      #contact-container .content img {
+        width: 30%; }
+      #contact-container .content .contact-blurb {
+        width: 60%; }
+      #contact-container .content .social {
+        width: 225px;
+        margin: 10px 5px 0 0; }
+        #contact-container .content .social a {
+          background-size: 80%;
+          padding: 0;
+          width: 28px; } }
 @media screen and (max-width: 700px) {
   .content-container {
+    width: 100%;
     min-width: 100%;
     border-radius: 0; }
 

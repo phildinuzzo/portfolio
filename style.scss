@@ -79,7 +79,10 @@ a {
   margin: 20px auto 30px;
   padding-bottom: 10px;
   z-index: 0;
-  @media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 700px) {
+  .container {
   	width: 100%;
   	margin: 0;
   	padding: 0;
@@ -230,19 +233,13 @@ a {
 		border-radius: 50%;
 	}
 	.circle-1 {
-		top:8px;
-		width: 35px;
-		height: 35px;
+		@include circles(8px, 35px);
 	}
 	.circle-2 {
-		top: 15px;
-		width: 20px;
-		height: 20px;
+		@include circles(15px, 20px);
 	}
 	.circle-3 {
-		top: 17px;
-		width: 15px;
-		height: 15px;
+		@include circles(17px, 15px);
 	}
 }
 
@@ -310,7 +307,6 @@ a {
 }
 
 
-
 // Tab containers
 .content-container {
 	display: none;
@@ -320,9 +316,6 @@ a {
   min-height: 40px;
   background-color: #ffffff;
   border-radius: 10px;
-  @media screen and (max-width: 700px) {
-  	width: 95%;
-  }
   .content {
   	position: relative;
   }
@@ -439,15 +432,12 @@ a {
 	background-color: $blue;
   display: none;
   padding: 0 0 10px 0;
-  width: 88%;
+  width: 90%;
   h3 {
   	font-size: 22px;
   	margin: 10px auto;
   	padding-top: 10px;
   }
-  b {
-	  color: $orange;
-	}
 	// For resume-left and resume-right
   .resume-sub {
   	display: inline-block;
@@ -464,6 +454,7 @@ a {
 
 .resume-left {
 	display: inline-block;
+	float: right;
 	vertical-align: top;
 	margin-left: 15px;
 	width: 200px;
@@ -488,7 +479,7 @@ a {
 }
 
 .resume-right {
-	width: 70%;
+	width: 72%;
 	display: inline-block;
   .summary {
   	width: 96%;
@@ -512,6 +503,62 @@ a {
   		}
   	}
   }
+}
+
+@media screen and (max-width: 700px) {
+	#resume-container {
+	  h3 {
+	  	font-size: 18px;
+	  }
+		// For resume-left and resume-right child divs
+	  .resume-sub {
+	  	border-radius: 0;
+	  	margin-bottom: 0;
+	  	h3 {
+	  		margin-left: 10px;
+	  	}
+	  }
+	}
+	.resume-left {
+		width: 100px;
+		margin-right: 15px;
+		text-align: left;
+	  .skills {
+	  	width: 100px;
+	  	margin-bottom: 0;
+	  	ul {
+	  		margin: 0 0 10px 0;
+	  		li {
+	  			letter-spacing: normal;
+	  			font-size: 15px;
+	  		}
+	  	}
+	  }
+	  .resume {
+	  	width: 100px;
+	  	font-size: 15px;
+	  	a {
+	  		margin: 0 0 10px 0;
+	  	}
+	  }
+	}
+	.resume-right {
+	  .summary {
+	  	width: 98%;
+	  	p {
+	  		font-size: 15px;
+	  	}
+	  	ul {
+	  		li {
+	  			font-size: 15px;
+	  		}
+	  	}
+	  }
+	}
+}
+
+// Temporary queries to maximize summary width
+.resume-right {
 	@media screen and (max-width: 1000px) {
 		width: 69%;
 	}
@@ -521,8 +568,19 @@ a {
 	@media screen and (max-width: 850px) {
 		width: 61%;
 	}
+	@media screen and (max-width: 700px) {
+		width: 77%;
+	}
+	@media screen and (max-width: 600px) {
+		width: 73%;
+	}
+	@media screen and (max-width: 500px) {
+		width: 66%;
+	}
+	@media screen and (max-width: 400px) {
+		width: 61%;
+	}
 }
-
 
 // Contact tab
 #contact-container {
@@ -545,35 +603,37 @@ a {
   		text-align: left;
   	}
   }
-  @media screen and (max-width: 550px) {
-  	width: 90%;
-  	.content {
-  		width: 100%;
-  		margin: 0 auto;
-  		img {
-  			width: 30%;
-  		}
-  		.contact-blurb {
-  			width: 60%;
-  		}
-  		.social {
-  			width: 225px;
-  			margin: 10px 5px 0 0;
-  			a {
-  				background-size: 80%;
-  				padding: 0;
-  				width: 28px;
-  			}
-  		}
-  	}
-  }
 }
 
+@media screen and (max-width: 550px) {
+	#contact-container {
+		width: 90%;
+		.content {
+			width: 100%;
+			margin: 0 auto;
+			img {
+				width: 30%;
+			}
+			.contact-blurb {
+				width: 60%;
+			}
+			.social {
+				width: 225px;
+				margin: 10px 5px 0 0;
+				a {
+					background-size: 80%;
+					padding: 0;
+					width: 28px;
+				}
+			}
+		}
+	}
+}
 
-
-// Media queries for content tabs
+// Media queries for top-level content tabs
 @media screen and (max-width: 700px) {
 	.content-container {
+		width: 100%;
   	min-width: 100%;
   	border-radius: 0;
    }
