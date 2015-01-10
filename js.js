@@ -7,19 +7,17 @@ $(document).ready(function() {
 
 // IMAGES
 // Convert to data-uri
-// Possibly pre-load more images
 
 // CSS
 // Implement @font for fonts
 // Improve Experience media queries, small screen format
-// Mixins for Circle class?
 
 // HTML
 // Refacotor to remove hardcoded data-attr
 
 
 // Preload large images, background first
-  var preloads = ['assets/bg.png', 'assets/me.png', 'assets/goodfoodphone.png', 'assets/goodfoodscreen.png'];
+  var preloads = ['assets/bg.png', 'assets/me.png', 'assets/goodfoodphone.png'];
 
 	for (i = 0; i < preloads.length; i++) {
 		var image = new Image();
@@ -46,23 +44,12 @@ $(document).ready(function() {
 		});
 	}
 
-  // Allow function to trigger only after resize is complete.
-  // var delay = (function(){
-  //   var timer = 0;
-  //   return function(callback, ms){
-  //     clearTimeout(timer);
-  //     timer = setTimeout(callback, ms);
-  //   };
-  // })();
-
 // Small screen navbar
 	$(window).on('resize', function(e){
 		if ($(e.target).width() < 700) {
-      // delay(function(){
         $('.nav-arrow-container').show();
         // Temp fix for arrows on re-size to under 700px
         $('.nav-arrow').css('top', $('.active').data('top-value'));
-      // }, 500);
 		} else {
 			$('.nav-arrow-container').hide();
 		}
@@ -81,13 +68,12 @@ $(document).ready(function() {
 			} else {
 				$('.nav-arrow-container').show();
 			}
+
 			// Small screen Navbar animation
-      // if ($(window).width() < 700) {
-  			var navHeight = $('.navbutton').outerHeight();
-  			$('.nav-arrow').animate({
-  				top: navHeight * $(this).data('top') - (navHeight/1.5) + 'px',
-  			}, 500);
-      // }
+			var navHeight = $('.navbutton').outerHeight();
+			$('.nav-arrow').animate({
+				top: navHeight * $(this).data('top') - (navHeight/1.5) + 'px',
+			}, 500);
 
 			// Content animation
 			$('.content-container').fadeOut(400);
@@ -103,7 +89,7 @@ $(document).ready(function() {
 		}
 	}
 
-	// Fade in the main div, enable navbar click and check for hash, screen size
+// Fade in the main div, enable navbar click and check for hash, screen size
   $('.header').delay(300).fadeIn(600, 'swing', function() {
   	$('.navbutton').on('click', navAction);
   	if(window.location.hash) {
@@ -114,13 +100,12 @@ $(document).ready(function() {
   	}
   });
 
-  // Image modal
+// Image modal
   var $overlay = $('.overlay');
   var src;
   $('.img-holder, .modal-image').on('click', function(){
   	$overlay.show();
   	if ($(this).attr('src')) {
-  		console.log('has clas')
   		var src = $(this).attr('src')
   	} else {
   		var src = $(this).children('img').attr('src')

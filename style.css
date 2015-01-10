@@ -20,6 +20,9 @@ a {
   a:hover {
     color: #bd1c1c; }
 
+@media screen and (max-width: 700px) {
+  p, li {
+    font-size: 16px; } }
 .overlay {
   display: none;
   width: 100%;
@@ -370,37 +373,27 @@ a {
     font-size: 26px;
     text-align: center; }
 
+@media screen and (max-width: 700px) {
+  #portfolio-container h2 {
+    font-size: 22px; } }
 .port-div {
   padding: 0 10px 20px 10px;
   min-height: 250px; }
   .port-div p {
+    width: 45%;
     float: right;
-    width: 80%;
     margin: 0 auto; }
+    .port-div p .link {
+      font-weight: bold;
+      white-space: nowrap; }
   .port-div img {
     width: 100%; }
 
-.goodfood p {
-  margin-top: 80px; }
-.goodfood img {
-  width: 48%; }
-
-.thelist {
-  min-height: 350px;
-  padding-top: 20px;
-  background-color: #f6f8fa; }
-  .thelist p {
-    float: left;
-    width: 45%;
-    padding-left: 20px; }
-  .thelist .img-holder {
-    float: right; }
-
 .sweatguru p {
+  width: 50%;
   float: right; }
 .sweatguru .thumbnails {
   width: 95%;
-  height: 70px;
   margin: 20px auto 0;
   text-align: center; }
   .sweatguru .thumbnails img {
@@ -409,6 +402,28 @@ a {
     display: inline-block;
     width: auto;
     margin: 0 5px; }
+    .sweatguru .thumbnails img:hover {
+      -webkit-box-shadow: 0px 0px 0px 3px #42617c;
+      -moz-box-shadow: 0px 0px 0px 3px #42617c;
+      box-shadow: 0px 0px 0px 3px #42617c; }
+
+.thelist {
+  min-height: 350px;
+  background-color: #f6f8fa; }
+  .thelist h2 {
+    padding-top: 20px; }
+  .thelist p {
+    float: left;
+    padding-left: 20px; }
+  .thelist .img-holder {
+    float: right; }
+
+.goodfood p {
+  width: 51%;
+  margin-top: 80px; }
+.goodfood img {
+  width: 48%;
+  max-width: 300px; }
 
 #resume-container {
   background-color: #42617c;

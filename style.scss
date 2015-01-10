@@ -31,6 +31,12 @@ a {
 	}
 }
 
+@media screen and (max-width: 700px) {
+	p, li {
+		font-size: 16px;
+	}
+}
+
 //Overlay for image modals
 .overlay {
 	display: none;
@@ -353,6 +359,29 @@ a {
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Portfolio tab
 #portfolio-container {
   display: none;
@@ -363,56 +392,42 @@ a {
 	}
 }
 
+@media screen and (max-width: 700px) {
+	#portfolio-container {
+		h2 {
+			font-size: 22px;
+		}
+	}
+}
+
+
 // All portfolio sections ~~~
 .port-div {
 	padding: 0 10px 20px 10px;
 	min-height: 250px;
 	p {
+		width: 45%;
 		float: right;
-		width: 80%;
 		margin: 0 auto;
+		.link {
+			font-weight: bold;
+			white-space: nowrap;
+		}
 	}
 	img {
 		width: 100%;
 	}
 }
 
-// GoodFood section ~~~~~
-.goodfood {
-	p {
-		margin-top: 80px;
-	}
-	img {
-		width: 48%;
-	}
-}
-
-// The List section ~~~~~
-.thelist {
-	min-height: 350px;
-	padding-top: 20px;
-	background-color: lighten($blue, 60%);
-	p {
-		float: left;
-		width: 45%;
-		padding-left: 20px;
-	}
-	.img-holder {
-		float: right;
-	}
-}
-
 // SweatGuru section ~~~~
 .sweatguru {
 	p {
+		width: 50%;
 		float: right;
 	}
-	.s1 {
-		// width: 45%;
-	}
+
 	.thumbnails {
 		width: 95%;
-		height: 70px;
 		margin: 20px auto 0;
 		text-align: center;
 		img {
@@ -421,9 +436,74 @@ a {
 			display: inline-block;
 			width: auto;
 			margin: 0 5px;
+			&:hover {
+				-webkit-box-shadow: 0px 0px 0px 3px rgba(66,97,124,1);
+				-moz-box-shadow: 0px 0px 0px 3px rgba(66,97,124,1);
+				box-shadow: 0px 0px 0px 3px rgba(66,97,124,1);
+			}
 		}
 	}
 }
+
+
+
+// The List section ~~~~~
+.thelist {
+	min-height: 350px;
+	background-color: lighten($blue, 60%);
+	h2 {
+		padding-top: 20px;
+	}
+	p {
+		float: left;
+		padding-left: 20px;
+	}
+	.img-holder {
+		float: right;
+	}
+}
+
+
+// GoodFood section ~~~~~
+.goodfood {
+	p {
+		width: 51%;
+		margin-top: 80px;
+	}
+	img {
+		width: 48%;
+		max-width: 300px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
