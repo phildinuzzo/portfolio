@@ -15,6 +15,10 @@ $(document).ready(function() {
 // HTML
 // Refacotor to remove hardcoded data-attr
 
+// Asma's Notes
+// Make the SG photos a carousel
+// Change SG tenses to present
+
 
 // Preload large images, background first
   var preloads = ['assets/bg.png', 'assets/me.png', 'assets/goodfoodphone.png'];
