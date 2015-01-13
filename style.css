@@ -1,7 +1,6 @@
 body {
   background-color: #FBFBFB;
-  background-repeat: round;
-  min-height: 1000px; }
+  background-repeat: round; }
 
 p, li {
   font-family: arial;
@@ -381,7 +380,7 @@ a {
   min-height: 250px; }
   .port-div p {
     width: 45%;
-    float: right;
+    display: inline-block;
     margin: 0 auto; }
     .port-div p .link {
       font-weight: bold;
@@ -391,11 +390,15 @@ a {
 
 .sweatguru p {
   width: 50%;
-  float: right; }
+  padding-left: 3%; }
+.sweatguru .img-holder {
+  float: left; }
 .sweatguru .thumbnails {
   width: 95%;
   margin: 20px auto 0;
-  text-align: center; }
+  padding-top: 18px;
+  text-align: center;
+  clear: both; }
   .sweatguru .thumbnails img {
     height: 70px;
     cursor: pointer;
@@ -407,6 +410,9 @@ a {
       -moz-box-shadow: 0px 0px 0px 3px #42617c;
       box-shadow: 0px 0px 0px 3px #42617c; }
 
+@media screen and (max-width: 700px) {
+  .sweatguru .thumbnails > img {
+    height: 50px; } }
 .thelist {
   min-height: 350px;
   background-color: #f6f8fa; }
@@ -414,11 +420,12 @@ a {
     padding-top: 20px; }
   .thelist p {
     float: left;
-    padding-left: 20px; }
+    padding-left: 15px; }
   .thelist .img-holder {
     float: right; }
 
 .goodfood p {
+  float: right;
   width: 51%;
   margin-top: 80px; }
 .goodfood img {
@@ -440,7 +447,8 @@ a {
     border-radius: 10px;
     height: auto;
     padding: 10px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-size: 17px; }
     #resume-container .resume-sub h3 {
       margin-left: 15px; }
 
@@ -482,7 +490,6 @@ a {
       width: 85%; }
       .resume-right .summary ul li {
         font-size: 16px;
-        font-weight: bold;
         padding-bottom: 8px; }
 
 @media screen and (max-width: 700px) {
