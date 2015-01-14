@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 // JS
 // Check navbar at small screen size when using hash links
+// Error when trying to load jQuery source map - load remotley?
 
 // IMAGES
 // Convert to data-uri
@@ -14,6 +15,7 @@ $(document).ready(function() {
 
 // HTML
 // Refacotor to remove hardcoded data-attr
+// Convert to HTML5 semantic elements
 
 // Asma's Notes
 // Make the SG photos a carousel
