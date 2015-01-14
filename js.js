@@ -4,7 +4,6 @@ $(document).ready(function() {
 
 // JS
 // Check navbar at small screen size when using hash links
-// Error when trying to load jQuery source map - load remotley?
 
 // IMAGES
 // Convert to data-uri
@@ -36,7 +35,7 @@ $(document).ready(function() {
 // Some navbar animation
 	var navSlider = function(speed, i) {
 		$('.circle-' + i).show().animate({
-			right: $('.navbar').width() - $('.active').position().left - ($('.active').width()/2) + 'px',
+			right: $('nav').width() - $('.active').position().left - ($('.active').width()/2) + 'px',
 		}, speed, function() {
 			$('.circle-' + i).fadeOut(500).css({
 				right: '-200px',
@@ -69,7 +68,7 @@ $(document).ready(function() {
 			// Navbar animation
 			if (!boolean === true && $(window).width() > 700) {
 				for (var i = 0; i < $('.circle').length; i++) {
-					navSlider($('.navbar').width() + ($('.active').position().left/2) + (i * 70) - 300, i.toString());
+					navSlider($('nav').width() + ($('.active').position().left/2) + (i * 70) - 300, i.toString());
 				}
 			} else {
 				$('.nav-arrow-container').show();
@@ -96,7 +95,7 @@ $(document).ready(function() {
 	}
 
 // Fade in the main div, enable navbar click and check for hash, screen size
-  $('.header').delay(300).fadeIn(600, 'swing', function() {
+  $('header').delay(300).fadeIn(600, 'swing', function() {
   	$('.navbutton').on('click', navAction);
   	if(window.location.hash) {
   		$(window.location.hash).trigger('click', true);
