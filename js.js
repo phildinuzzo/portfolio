@@ -14,7 +14,6 @@ $(document).ready(function() {
 
 // HTML
 // Refacotor to remove hardcoded data-attr
-// Convert to HTML5 semantic elements
 
 // Asma's Notes
 // Make the SG photos a carousel
