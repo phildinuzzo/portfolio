@@ -548,7 +548,8 @@ nav {
     width: 61%; } }
 
 #contact-container {
-  display: none; }
+  display: none;
+  min-height: 220px; }
   #contact-container .headshot {
     width: 200px;
     border-radius: 5px;
@@ -564,6 +565,9 @@ nav {
     #contact-container .contact-blurb p {
       text-align: left; }
 
+@media screen and (max-width: 700px) {
+  .headshot {
+    width: 30%; } }
 @media screen and (max-width: 550px) {
   #contact-container {
     width: 90%; }

@@ -19,6 +19,13 @@ $(document).ready(function() {
 // Make the SG photos a carousel
 // Change SG tenses to present
 
+// To fix auto height animation:
+// $("#first").animate({height: $("#first").get(0).scrollHeight}, 1000 );
+// Explanation: The DOM already knows from its initial rendering what size the expanded div will have when set to auto height. This property is stored in the DOM node as scrollHeight. We just have to fetch the DOM Element from the jQuery Element by calling get(0) and then we can access the property.
+
+
+
+
 
 // Preload large images, background first
   var preloads = ['assets/bg.png', 'assets/me.png', 'assets/goodfoodphone.png'];
@@ -50,6 +57,7 @@ $(document).ready(function() {
 
 // Small screen navbar
 	$(window).on('resize', function(e){
+    $('.container').css('height', 'auto');
 		if ($(e.target).width() < 700) {
         $('.nav-arrow-container').show();
         // Temp fix for arrows on re-size to under 700px
@@ -81,14 +89,14 @@ $(document).ready(function() {
 
 			// Content animation
 			$('.content-container').fadeOut(400);
+      // Get the correct height for animation
+        var clone = $('#' + $(this).attr('id') + '-container').clone().css('height', 'auto').appendTo('body').show();
+        var height = clone.height();
+        clone.remove();
 			$('.container').animate({
-				height: $(this).data('height'),
+        height: height + 410 + 'px',
 			}, 500, function() {
 				$('#' + $(self).attr('id') + '-container').fadeIn(300);
-        // Set container height to auto for condensed screen sizes
-        if ($(window).width() < 500) {
-          $('.container').css('height', 'auto');
-        }
 			});
 		}
 	}

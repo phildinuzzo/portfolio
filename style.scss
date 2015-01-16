@@ -624,6 +624,7 @@ nav {
 // Contact tab
 #contact-container {
   display: none;
+  min-height: 220px;
 	.headshot {
 	  width: 200px;
 	  border-radius: 5px;
@@ -642,6 +643,11 @@ nav {
   		text-align: left;
   	}
   }
+}
+@media screen and (max-width: 700px) {
+	.headshot {
+		width: 30%;
+	}
 }
 
 @media screen and (max-width: 550px) {
