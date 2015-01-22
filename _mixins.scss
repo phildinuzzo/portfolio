@@ -33,3 +33,10 @@ $orange: #E34242;
 	width: $size;
 	height: $size;
 }
+
+@mixin transition($speed) {
+	  -webkit-transition: all $speed ease-in;
+	  transition: all $speed ease-in;
+	  -moz-transition: all $speed ease-in;
+	  -o-transition: all $speed ease-in;
+}
